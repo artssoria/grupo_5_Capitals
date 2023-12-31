@@ -22,7 +22,7 @@ Nuestro sitio web se inspiró en varios referentes líderes en la industria de v
 - Airbnb
 - Kayak
 
-Puedes ver nuestro boceto en [Wireframe.cc](https://wireframe.cc/6kdyTv)
+Puedes ver nuestro boceto en [Wireframe.cc](https://wireframe.cc/6kdyTv){:target="_blank"}
 
 ## Oferta de productos y/o servicios
 
