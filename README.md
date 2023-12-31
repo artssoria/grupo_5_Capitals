@@ -1,5 +1,6 @@
 # grupo_5_Capitals
-##TravelXJujuy
+
+## TravelXJujuy
 
 ### Temática del sitio y público objetivo
 
