@@ -43,4 +43,4 @@ Nuestro objetivo es asegurar que cada turista tenga una experiencia inolvidable 
 
 ## Logotipo 
 
-![TravelXJujuy Logo](https://media.discordapp.net/attachments/1187853120181641318/1191946857769865236/IMG_20240103_003022.png?ex=65a74a04&is=6594d504&hm=2aea2a5513b42b6db936c64e3c262e58d81d011030ff96a994f1e3869602b6cc&=&format=webp&quality=lossless&width=282&height=353){witdh='100px'}
+![TravelXJujuy Logo](https://media.discordapp.net/attachments/1187853120181641318/1191946857769865236/IMG_20240103_003022.png?ex=65a74a04&is=6594d504&hm=2aea2a5513b42b6db936c64e3c262e58d81d011030ff96a994f1e3869602b6cc&=&format=webp&quality=lossless&width=282&height=353)
