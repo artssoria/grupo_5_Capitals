@@ -17,6 +17,8 @@ Nuestro sitio web se inspiró en varios referentes líderes en la industria de v
 - AlMundo:Ejemplo de pagina especializada en pasajes con enfasis en las aereolineas
 - Airbnb: Ejemplo de pagina especializada en un tipo de hospedaje
 - Kayak: Ejemplo de pagina especializada en pasajes y costos
+- América Indígena: Ejemplo de página orientada a los viajes culturales
+- LemonTravel: Ejemplo de página de viajes y turismo locales
 
 Puedes ver nuestro boceto en https://wireframe.cc/6kdyTv
 
@@ -35,7 +37,7 @@ Nuestro objetivo es asegurar que cada turista tenga una experiencia inolvidable 
 
 - Argañaras, Facundo: Estudiante de Programacion, Docente de Musica
 - Arturo Rubén Soria Terán: Estudiante de Literatura, aficionado por la programación y el diseño web, internauta de casualidad, curioso por la IA y muchos avances tecnológicos; introvertido y gracioso. La antítesis de lo lógico. 
-
+- Diego Nicolás Arjona: Estudiante de medicina y programación en diferentes áreas. Me gusta la música, el aprendizaje en general y la tecnología.
 
 
 ## Logotipo 
