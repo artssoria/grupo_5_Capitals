@@ -38,6 +38,7 @@ Nuestro objetivo es asegurar que cada turista tenga una experiencia inolvidable 
 ## Descripción del equipo
 
 - Argañaras, Facundo: Estudiante de Programacion, Docente de Musica
+- Arturo Rubén Soria Terán: Estudiante de Literatura, aficionado por la programación y el diseño web, internauta de casualidad, curioso por la IA y muchos avances tecnológicos; introvertido y gracioso. La antítesis de lo lógico. 
 
 
 
