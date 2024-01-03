@@ -14,13 +14,13 @@ Nuestro sitio web se inspira en la rica cultura y la impresionante belleza natur
 
 ### Referentes
 
-Nuestro sitio web se inspiró en varios referentes líderes en la industria de viajes:
+Nuestro sitio web se inspiró en varios referentes líderes en la industria de viajes, buscando ofrecer paquetes de experiencias uniendo las caracteristicas de las mismas:
 
-- Booking
-- TripAdvisor
-- AlMundo
-- Airbnb
-- Kayak
+- Booking: Ejemplo de pagina orientada mayormente a los Hospedajes tradicionales
+- TripAdvisor: Ejemplo de pagina orientada a las experiencias en los viajes
+- AlMundo:Ejemplo de pagina especializada en pasajes con enfasis en las aereolineas
+- Airbnb: Ejemplo de pagina especializada en un tipo de hospedaje
+- Kayak: Ejemplo de pagina especializada en pasajes y costos
 
 Puedes ver nuestro boceto en https://wireframe.cc/6kdyTv
 
