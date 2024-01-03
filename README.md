@@ -42,7 +42,7 @@ Nuestro sitio web se inspiró en varios referentes líderes en la industria de v
 Nuestro objetivo es asegurar que cada turista tenga una experiencia inolvidable en Jujuy, descubriendo la rica cultura, la impresionante belleza natural y las emocionantes festividades locales.
 
 ## Descripción del equipo
--Sanchez, Ana Georgina: Contadora Pública Nac., estudiante de Programación, en constante capacitación con miras al futuro.
+- Sanchez, Ana Georgina: Contadora Pública Nac., estudiante de Programación, en constante capacitación con miras al futuro.
 - Argañaras, Facundo: Estudiante de Programacion, Docente de Musica
 - Arturo Rubén Soria Terán: Estudiante de Literatura, aficionado por la programación y el diseño web, internauta de casualidad, curioso por la IA y muchos avances tecnológicos; introvertido y gracioso. La antítesis de lo lógico. 
 - Diego Nicolás Arjona: Estudiante de medicina y programación en diferentes áreas. Me gusta la música, el aprendizaje en general y la tecnología.
