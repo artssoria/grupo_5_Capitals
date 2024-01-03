@@ -7,13 +7,12 @@ Puedes ver nuestro boceto en https://wireframe.cc/6kdyTv
 
 **TravelXJujuy** es un sitio web dedicado a los viajes, con un enfoque específico en la provincia de Jujuy, Argentina. Nuestro objetivo es proporcionar a los turistas una plataforma integral para explorar y descubrir las maravillas de Jujuy, desde sus vibrantes carnavales hasta sus impresionantes paisajes naturales.
 Nuestro sitio se enfoca en las cuatro regiones de nuestra provincia:
-***Yungas:
-Sumérgete en la exuberante vegetación de las Yungas, una región donde la selva se encuentra con las montañas. Descubre una biodiversidad única mientras exploras senderos serpenteantes que te llevarán a cascadas ocultas y maravillosas vistas panorámicas. La frescura del clima y la riqueza natural te transportarán a un oasis verde y mágico.
-***Valles:
+- **Yungas**: Sumérgete en la exuberante vegetación de las Yungas, una región donde la selva se encuentra con las montañas. Descubre una biodiversidad única mientras exploras senderos serpenteantes que te llevarán a cascadas ocultas y maravillosas vistas panorámicas. La frescura del clima y la riqueza natural te transportarán a un oasis verde y mágico.
+- **Valles**:
 Los Valles de Jujuy te invitan a explorar pintorescos pueblos. Rodeados de campos cultivados y montañas ondulantes, los Valles ofrecen una experiencia tranquila y auténtica. Descubre la calidez de la gente local, prueba los productos frescos de la región y déjate cautivar por la serenidad de este rincón encantador.
-***Quebrada:
+- **Quebrada**:
 Adéntrate en la majestuosa Quebrada de Humahuaca, declarada Patrimonio de la Humanidad. Aquí, las montañas se elevan como guardianes silenciosos mientras te sumerges en la rica historia cultural. Descubre pueblos pintorescos, sitios arqueológicos y colores vibrantes que narran la historia ancestral de la región. Cada rincón de la Quebrada cuenta una historia única.
-***Puna:
+- **Puna**:
 En la región de la Puna, la altitud y la vastedad del paisaje te desafían a explorar un mundo de altiplanos y lagunas de aguas cristalinas. Experimenta la conexión con la naturaleza en su estado más puro mientras te maravillas con la flora y fauna adaptadas a estas alturas. La Puna te ofrece un viaje único a través de paisajes remotos y una serenidad que solo se encuentra en las alturas.
 
 Nuestro público objetivo son los turistas provinciales, nacionales e internacionales que buscan una experiencia de viaje única en Jujuy. Nos enfocamos en aquellos interesados en conocer las regiones turísticas de la provincia, como la Puna, la Quebrada de Humahuaca, los Valles y las Yungas. Además, ofrecemos información y servicios especializados para aquellos interesados en la experiencia del Carnaval, una de las festividades más coloridas y emocionantes de nuestro pais.
