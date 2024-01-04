@@ -1,0 +1,12 @@
+{
+  "name": "grupo_5_capitals",
+  "version": "1.0.0",
+  "description": "Puedes ver nuestro boceto en https://wireframe.cc/6kdyTv",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
