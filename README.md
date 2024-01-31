@@ -55,6 +55,6 @@ Nuestro objetivo es asegurar que cada turista tenga una experiencia inolvidable 
 ## Paletas de Colores
 https://paletadecolores.com.ar/paleta/36173d/ff4845/ff745f/ffc55f/ffec5e/
 
-![Paleta de colores]()
+![Paleta de colores](https://raw.githubusercontent.com/artssoria/grupo_5_Capitals/blob/main/paleta%20de%20colores.png)
 
 
