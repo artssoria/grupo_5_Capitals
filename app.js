@@ -10,6 +10,10 @@ app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname, 'views', 'home.html')); // 
 });
 
+app.get('/login2.html', function(req, res) {
+    res.sendFile(path.join(__dirname, 'views', 'login2.html')); // 
+});
+
 
 app.listen(3000, function() {
     console.log('Arrancando Express desde el puerto 3000');
