@@ -11,8 +11,8 @@ app.get('/', function(req, res) {
 });
 
 // Ruta para la página de Login
-app.get('/login2.html', function(req, res) {
-    res.sendFile(path.join(__dirname, 'views', 'login2.html')); // 
+app.get('/login', function(req, res) {
+    res.sendFile(path.join(__dirname, 'views', 'login.html')); // 
 });
 
 // Ruta para la página de registro
