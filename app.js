@@ -24,11 +24,21 @@ app.get('/register', function(req, res) {
 app.use(express.urlencoded({ extended: true }));
 
 app.post('/register', (req, res) => {
-    // Manejar los datos del formulario
+    // Aquí puedes manejar los datos del formulario
     console.log(req.body);
 
     // Redirige al usuario a home.html después de enviar el formulario
     res.redirect('/'); // Redirige a la página de inicio
+});
+app.post('/login', (req, res) => {
+    // Aquí puedes manejar los datos del formulario
+    console.log(req.body);
+
+    // Aquí debes verificar los datos del usuario en tu base de datos
+    // Si los datos son correctos, puedes iniciar la sesión del usuario
+
+    // Redirige al usuario a la página principal
+    res.redirect('/');
 });
 
 
