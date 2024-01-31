@@ -10,8 +10,14 @@ app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname, 'views', 'home.html')); // 
 });
 
+// Ruta para la página de Login
 app.get('/login2.html', function(req, res) {
     res.sendFile(path.join(__dirname, 'views', 'login2.html')); // 
+});
+
+// Ruta para la página de registro
+app.get('/register', function(req, res) {
+    res.sendFile(path.join(__dirname, 'views', 'register.html'));
 });
 
 
