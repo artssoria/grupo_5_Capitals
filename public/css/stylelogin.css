@@ -1,7 +1,37 @@
-body {
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
     font-family: Arial, sans-serif;
-    
-    background-image: url = ('/images/cerro.jpg');
-    background-color: chocolate;
+    background-color: #36173D;
+}
+h1{
+    text-align: center;
+    margin-top: 30px;
+    color: #CCC;
+}
+.login-form {
+    width: 350px;
+    margin: 60px auto;
+    padding: 30px;
+    background-color: #FF4845;
+    border-radius: 10px;
+}
+.login-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #CCC;
+}
+.login-form button {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    color: #36173D;
+    font-weight: bold;
+    background-color: #FFEC5E;
 }
