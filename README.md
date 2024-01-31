@@ -57,10 +57,10 @@ https://paletadecolores.com.ar/paleta/36173d/ff4845/ff745f/ffc55f/ffec5e/
 
 ![Paleta de colores](https://github.com/artssoria/grupo_5_Capitals/blob/main/paleta%20de%20colores.png)
 
-.color1 { #36173d };
-.color2 { #ff4845 };
-.color3 { #ff745f };
-.color4 { #ffc55f };
-.color5 { #ffec5e };
+- .color1 { #36173d };
+- .color2 { #ff4845 };
+- .color3 { #ff745f };
+- .color4 { #ffc55f };
+- .color5 { #ffec5e };
 
 
