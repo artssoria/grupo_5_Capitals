@@ -387,8 +387,6 @@ footer{
 	transition: all 150ms;
 }
 
-
-
 .bloque4{
 	width: 100%;
 	height: 33%;
@@ -501,7 +499,11 @@ footer{
 	}
 
 	.Botones_nav ul li a{
-		font-size: 15px;
+		font-size: 13px;
+	}
+
+	.Botones_nav ul li i{
+		font-size: 13px;
 	}
 
 	.carrito a{
@@ -516,11 +518,86 @@ footer{
 		width: 80%;
 	}
 
+	.contenedor {
+		width: 90%;
+	}
+
+	.imagenes{
+		gap:0px;
+	}
+
 	.imagenes article{
 		width: 20%;
+		transition: all 300ms;
+	}
+
+	.imagenes article:hover{
+		transform: scale(120%);
+		cursor: pointer;
+	}
+
+	.imagen{
+		height: 250px;
+	}
+
+	.comentarios{
+		align-items: flex-start;
 	}
 
 	.comentario{
-		flex:45%;
+		flex:25%;
+	}
+
+	footer{
+		flex-direction: row;
+		height: 250px;
+	}
+
+	.bloque1{
+		width: 25%;
+		height: 100%;
+		justify-content: center;
+	}
+
+	.bloque2{
+		display: flex;
+		justify-content: center;
+		width: 25%;
+		height: 100%;
+		flex-direction: column;
+		align-items: center;
+		padding: 20px;
+		color:white;
+	}
+
+	.bloque2 h4{
+		font-size: 25px;
+		margin-bottom: 20px;
+	}
+	
+	.bloque2 ul{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
+		gap:20px
+	} 
+	
+	.bloque2 ul li{
+		list-style: none;
+		transition: all 150ms;
+	}
+
+	.bloque3{
+		display: flex;
+		justify-content: center;
+		width: 25%;
+		height: 100%;
+	}
+
+	.bloque4{
+		justify-content: center;
+		width: 25%;
+		height: 100%;
 	}
 }
