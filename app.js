@@ -33,6 +33,12 @@ app.get('/register', function(req, res) {
     res.sendFile(path.join(__dirname, 'views', 'register.html'));
 });
 
+// Ruta para la página de carrito
+app.get('/carrito', function(req, res) {
+    res.sendFile(path.join(__dirname, 'views', 'carrito.html')); // 
+});
+
+
 // Middleware para analizar el cuerpo de las solicitudes POST
 app.use(express.urlencoded({ extended: true }));
 
