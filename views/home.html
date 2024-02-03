@@ -3,41 +3,191 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/css/normal.css">
     <link rel="shortcut icon" href="/images/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="/css/style.css">
+	<script src="https://kit.fontawesome.com/ca385f949f.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="/css/amulya.css">
     <title>TravelXJujuy</title>
 </head>
 <body>
-    <div class="navbar">
-        <div id="logo">
-            <img src="/images/logo.png" alt="Logo" height="50px">
-        </div>
-        <a href="/"></a>
-        <a href="compra.html">Descubrí</a>
-        <a href="viaja">Viajá</a>
-        <a href="https://www.google.com/">Comentá</a>
-		<a href="login2.html"> Iniciar Sesión</a>
-      </div>
+	<header>
+		<nav class="navbar">
+			<div class="fila_superior">
+				<div class="logo">
+					<img src="/images/logo.png" alt="Logo">
+				</div>
+				<div class="Texto_Logo">
+					<p>TravelXJujuy</p>
+				</div>
+			</div>
+			<div class="Botones_nav">
+				<ul>
+					<li class="guia"><a href="compra.html">Descubrí</a></li>
+					<li class="guia"><a href="viaja">Viajá</a></li>
+					<li class="guia"><a href="https://www.google.com/">Comentá</a></li>
+					<li class="carrito"><a href="/producto"><i class="fa-solid fa-cart-shopping"></i></a></li>
+					<li class="boton_login"><a href="/login"> Iniciar Sesión</a></li>
+					<li class="boton_register"><a href="/register">Registrate</a></li>
+				</ul>
+			</div>
+		</nav>
+		<div class="banner1">
+			<h2>¿Dónde inicia tu travesía?</h2>
+		</div>
+		<div class="banner2">
+			<div class="contenedor-titulo">
+				<h1 class="titulo">TravelXJujuy</h1>
+			</div>
+			<div class="contenedor-banner">
+				<p class="texto">Muchos lugares por descubrir<br>en una sola provincia</p>
+				<a class="boton" href="https://www.google.com/">Visita ahora</a>
+			</div>
+		</div>
+	</header>
     
-      <div class="contenedor">
-		<h1 class="titulo">TravelXJujuy</h1>
-		<p class="texto">Muchos lugares por descubrir<br>en una sola provincia</p>
-		<a class="boton" href="https://www.google.com/">Visita ahora</a>
+    <main class="contenedor">
 		<h2 class="subtitulo">Ciudades de la provincia que te encantaría visitar</h2>
 		<div class="imagenes">
-			<img class="imagen" src="maimara.jpg" alt="Maimará">
-			<img class="imagen" src="termasdereyes.jpg" alt="Termas de Reyes">
-			<img class="imagen" src="puna.jpg" alt="Puna">
-			<img class="imagen" src="quebrada.jpg" alt="Quebrada">
+			<article>
+				<div class="imagen">
+					<img src="/images/Maimara.jpg" alt="Maimará">
+				</div>
+				<div class="article_desc">
+					<p>Maimará</p>
+				</div>
+			</article>
+
+			<article>
+				<div class="imagen">
+					<img src="/images/TermasReyes.png" alt="Termas de Reyes">
+				</div>
+				<div class="article_desc">
+					<p>Termas de Reyes</p>
+				</div>
+			</article>
+			
+			<article>
+				<div class="imagen">
+					<img src="/images/Salinas-Grandes.png" alt="Salinas Grandes">
+				</div>
+				<div class="article_desc">
+					<p>Salinas Grandes</p>
+				</div>
+			</article>
+
+			<article>
+				<div class="imagen">
+					<img src="/images/Yungas.jpg" alt="Yungas">
+				</div>
+				<div class="article_desc">
+					<p>Yungas</p>
+				</div>
+			</article>
 		</div>
+
 		<p class="texto">Viajá, comentá y descubrí<br>¿Dónde inicia tu nueva travesía?</p>
-		<div class="opciones">
-			<p class="opcion">Valles</p>
-			<p class="opcion">Yungas</p>
-			<p class="opcion">Salinas Grandes</p>
+
+		<div class="comentarios">
+			<div class="comentario">
+				<div class="cabeza">
+					<div class="im_comentario">
+						<img src="/images/Maria.png" alt="Maria_apolit">
+					</div>
+					<div class="princ_comentario">
+						<h3>Maria_apolit</h3>
+						<div class="puntaje">
+							<i class="fa-solid fa-briefcase"></i>
+							<i class="fa-solid fa-briefcase"></i>
+							<i class="fa-solid fa-briefcase"></i>
+							<i class="fa-solid fa-briefcase"></i>
+							<i class="fa-solid fa-briefcase"></i>
+						</div>
+					</div>
+				</div>
+				<div class="descrip">
+					<p>Espectacular la visita a este lugar, gracias a las visitas guiadas pude conocer más de la provincia</p>
+				</div>
+			</div>
+
+			<div class="comentario">
+				<div class="cabeza">
+					<div class="im_comentario">
+						<img src="/images/Carlos.png" alt="CarlosTomel">
+					</div>
+					<div class="princ_comentario">
+						<h3>CarlosTomel</h3>
+						<div class="puntaje">
+							<i class="fa-solid fa-briefcase"></i>
+							<i class="fa-solid fa-briefcase"></i>
+							<i class="fa-solid fa-briefcase"></i>
+							<i class="fa-solid fa-briefcase"></i>
+						</div>
+					</div>
+				</div>
+				<div class="descrip">
+					<p>Un estupendo lugar, nada que envidiar solamente el clima no nos acompaño en esta travesía. Lo de más escelente</p>
+				</div>
+			</div>
+
+			<div class="comentario">
+				<div class="cabeza">
+					<div class="im_comentario">
+						<img src="/images/Rufina.png" alt="Rufina-cop">
+					</div>
+					<div class="princ_comentario">
+						<h3>Rufina-cop</h3>
+						<div class="puntaje">
+							<i class="fa-solid fa-briefcase"></i>
+							<i class="fa-solid fa-briefcase"></i>
+							<i class="fa-solid fa-briefcase"></i>
+							<i class="fa-solid fa-briefcase"></i>
+						</div>
+					</div>
+				</div>
+				<div class="descrip">
+					<p>Mi familia quedó encantada por visitar varias localidades de la provincia, sin duda un lugar donde quiero visitar de nuevo es San Pedro de Jujuy.</p>
+				</div>
+			</div>
 		</div>
-		<h2 class="subtitulo">Carnaval de las Yungas</h2>
-		<a class="boton" href="www.carnavaldeleyungas.com">Más información</a>
-	</div>
+	</main>
+
+	<footer>
+		<div class="bloque1">
+			<h4>Políticas legales</h4>
+			<ul>
+				<li>Términos y condiciones</li>
+				<li>Ayuda</li>
+				<li>Preguntas Frecuentes</li>
+			</ul>
+		</div>
+		<div class="bloque2">
+			<h4>Enlaces de interes</h4>
+			<ul>
+				<li>Servicios Públicos</li>
+				<li>Secretaría Turismo</li>
+				<li>Organismos Nacionales</li>
+			</ul>
+		</div>
+		<div class="bloque3">
+			<h4>Oficinas físicas</h4>
+			<ul>
+				<li>El alerce 2154 Barrio Carnaval</li>
+				<li>0800 - 2555 6000</li>
+				<li>Horario corrido de 9 a 13 hs y 18 a 21 hs</li>
+			</ul>
+		</div>
+		<div class="bloque4">
+			<div class="boton-email">
+				<p><a href="https://github.com/artssoria/grupo_5_Capitals">Repositorio</a></p>
+			</div>
+			<div class="redes">
+				<i class="fa-brands fa-square-instagram"></i>
+				<i class="fa-brands fa-square-facebook"></i>
+				<i class="fa-brands fa-square-x-twitter"></i>
+				<i class="fa-brands fa-square-whatsapp"></i>
+			</div>
+		</div>
+	</footer>
 </body>
 </html>
