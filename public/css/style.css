@@ -320,6 +320,7 @@ footer{
 	margin-top: auto;
 	border-top:5px solid #ffc55f;
 	display: flex;
+	flex-direction: column;
 
 }
 
@@ -327,4 +328,24 @@ footer{
 	display: hidden;
 }
 
+.bloque2{
+	display: none;
+}
 
+.bloque3{
+	display: flex;
+	flex-direction: column;
+}
+
+.bloque4{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+
+}
+
+.boton_email{
+	border-radius: 10px;
+
+}
