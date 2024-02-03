@@ -9,7 +9,19 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname, 'views', 'home.html')); // 
 });
-
+// Ruta para la páginas descubri (4 html)
+app.get('/descubri', function(req, res) {
+    res.sendFile(path.join(__dirname, 'views', 'puna.html')); // 
+});
+app.get('/descubri', function(req, res) {
+    res.sendFile(path.join(__dirname, 'views', 'quebrada.html')); // 
+});
+app.get('/descubri', function(req, res) {
+    res.sendFile(path.join(__dirname, 'views', 'valles.html')); // 
+    app.get('/descubri', function(req, res) {
+        res.sendFile(path.join(__dirname, 'views', 'yungas.html')); // 
+    });
+});
 // Ruta para la página de Login
 app.get('/login', function(req, res) {
     res.sendFile(path.join(__dirname, 'views', 'login.html')); // 
