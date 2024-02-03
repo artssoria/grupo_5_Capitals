@@ -79,7 +79,7 @@ body {
 .Botones_nav ul li a{
     color: white;
 	text-decoration: none;
-    padding: 14px 0px;
+    padding: 14px 5px;
     text-align: center;
 	transition: all 150ms;
 }
@@ -156,6 +156,10 @@ body {
 
 .banner2{
 	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
 }
 
 .titulo {
@@ -321,11 +325,37 @@ footer{
 	border-top:5px solid #ffc55f;
 	display: flex;
 	flex-direction: column;
-
+	align-items: center;
+	justify-content: center;
 }
 
 .bloque1{
-	display: hidden;
+	width: 100%;
+	height: 33%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+	color:white;
+}
+
+.bloque1 h4{
+	font-size: 25px;
+	margin-bottom: 20px;
+}
+
+.bloque1 ul{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	gap:20px
+} 
+
+.bloque1 ul li{
+	list-style: none;
+	transition: all 150ms;
 }
 
 .bloque2{
@@ -333,19 +363,313 @@ footer{
 }
 
 .bloque3{
+	width: 100%;
+	height: 33%;
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+	color:white;
+}
+
+.bloque3 h4{
+	font-size: 25px;
+	margin-bottom: 20px;
+}
+
+.bloque3 ul{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	gap:20px
+} 
+
+.bloque3 ul li{
+	list-style: none;
+	transition: all 150ms;
+}
+
+.bloque1 ul li:hover, .bloque2 ul li:hover{
+	color:#ffec5e;
+	cursor:pointer;
 }
 
 .bloque4{
+	width: 100%;
+	height: 33%;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-around;
+	justify-content: center;
 	align-items: center;
-
+	padding: 20px;
 }
 
-.boton_email{
-	border-radius: 10px;
+.boton-email{
+	width: 100%;
+	height: 50%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
 
+.boton-email p{
+	width: 70%;
+	height: 40%;
+	background-color: #ffc55f;
+	border:none;
+	border-radius: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	transition: all 150ms;
+}
+
+.boton-email p:hover{
+	background-color: #ffec5e;
+	cursor: pointer;
+}
+
+.boton-email p a{
+	text-decoration: none;
+	color:white;
+}
+
+.redes{
+	width: 100%;
+	height: 50%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.redes i{
+	color:white;
+	font-size: 30px;
+	transition: all 150ms;
+}
+
+.redes i:hover{
+	color:#ffc55f;
+	cursor:pointer;
+}
+
+
+@media (min-width:725px){
+    .imagenes article{
+		width: 45%;
+	}
+
+	.comentario{
+		flex:45%;
+	}
+}
+
+@media (min-width:1113px){
+	.navbar{
+		flex-direction: row;
+		height: 80px;
+		padding: 0px;
+	}
+
+	.fila_superior{
+		flex:45%;
+		height: 100%;
+	}
+
+	.logo{
+		flex:10%;
+		height: 100%;
+		width: 100%;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+	}
+
+	.logo img{
+		height: 60px;
+	}
+	
+	.Texto_Logo{
+		flex:90%;
+		height: 100%;
+		padding: 20px;
+		display: flex;
+		align-items: center;
+
+	}
+
+	.Texto_Logo p{
+		font-size: 20px;
+		text-align: left;
+	}
+
+	.Botones_nav{
+		flex: 55%;
+		flex-wrap: nowrap;
+		height: 100%;
+		padding: 0px;
+	}
+
+	.Botones_nav ul{
+		width: 100%;
+	}
+
+	.Botones_nav ul li{
+		width: 16.6%;
+	}
+
+	.Botones_nav ul li a{
+		font-size: 13px;
+	}
+
+	.Botones_nav ul li i{
+		font-size: 13px;
+	}
+
+	.carrito a{
+		width: 50%;
+	}
+
+	.boton_login a{
+		width: 100%;
+	}
+
+	.boton_register a{
+		width: 80%;
+	}
+
+	.banner1{
+		background-image: url(/images/banner1.png);
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+
+	.contenedor {
+		width: 90%;
+	}
+
+	.banner2{
+		display: flex;
+		flex-direction: row-reverse;
+		width: 100%;
+		height: 300px;
+		align-items: center;
+
+	}
+
+	.contenedor-titulo{
+		height: 100%;
+		width: 50%;
+		background-image: url('/images/cerro.jpg');
+		background-position: end;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+
+	.titulo{
+		margin: 0px;
+		height: 100%;
+		margin-top: 30px;
+	}
+
+	.contenedor-banner{
+		width: 50%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		align-items: flex-start;
+		padding: 40px;
+	}
+
+	.texto{
+		margin: 0px;
+	}
+
+	.boton{
+		margin:0px;
+		margin-left:80px;
+		margin-top: 40px;
+	}
+
+	.imagenes{
+		gap:0px;
+	}
+
+	.imagenes article{
+		width: 20%;
+		transition: all 300ms;
+	}
+
+	.imagenes article:hover{
+		transform: scale(120%);
+		cursor: pointer;
+	}
+
+	.imagen{
+		height: 250px;
+	}
+
+	.comentarios{
+		align-items: flex-start;
+	}
+
+	.comentario{
+		flex:25%;
+	}
+
+	footer{
+		flex-direction: row;
+		height: 250px;
+	}
+
+	.bloque1{
+		width: 25%;
+		height: 100%;
+		justify-content: center;
+	}
+
+	.bloque2{
+		display: flex;
+		justify-content: center;
+		width: 25%;
+		height: 100%;
+		flex-direction: column;
+		align-items: center;
+		padding: 20px;
+		color:white;
+	}
+
+	.bloque2 h4{
+		font-size: 25px;
+		margin-bottom: 20px;
+	}
+	
+	.bloque2 ul{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
+		gap:20px
+	} 
+	
+	.bloque2 ul li{
+		list-style: none;
+		transition: all 150ms;
+	}
+
+	.bloque3{
+		display: flex;
+		justify-content: center;
+		width: 25%;
+		height: 100%;
+	}
+
+	.bloque4{
+		justify-content: center;
+		width: 25%;
+		height: 100%;
+	}
 }
