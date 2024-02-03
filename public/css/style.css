@@ -156,6 +156,10 @@ body {
 
 .banner2{
 	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
 }
 
 .titulo {
@@ -537,7 +541,7 @@ footer{
 	}
 
 	.banner1{
-		background-image: url(/images/banner1.png),url(/images/cerro.jpg);
+		background-image: url(/images/banner1.png);
 		background-size: cover;
 		background-position: center;
 		background-repeat: no-repeat;
@@ -545,6 +549,49 @@ footer{
 
 	.contenedor {
 		width: 90%;
+	}
+
+	.banner2{
+		display: flex;
+		flex-direction: row-reverse;
+		width: 100%;
+		height: 300px;
+		align-items: center;
+
+	}
+
+	.contenedor-titulo{
+		height: 100%;
+		width: 50%;
+		background-image: url('/images/cerro.jpg');
+		background-position: end;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+
+	.titulo{
+		margin: 0px;
+		height: 100%;
+		margin-top: 30px;
+	}
+
+	.contenedor-banner{
+		width: 50%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		align-items: flex-start;
+		padding: 40px;
+	}
+
+	.texto{
+		margin: 0px;
+	}
+
+	.boton{
+		margin:0px;
+		margin-left:80px;
+		margin-top: 40px;
 	}
 
 	.imagenes{
