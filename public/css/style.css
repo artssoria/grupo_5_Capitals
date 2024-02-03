@@ -387,6 +387,11 @@ footer{
 	transition: all 150ms;
 }
 
+.bloque1 ul li:hover, .bloque2 ul li:hover{
+	color:#ffec5e;
+	cursor:pointer;
+}
+
 .bloque4{
 	width: 100%;
 	height: 33%;
@@ -414,6 +419,12 @@ footer{
 	display: flex;
 	align-items: center;
 	justify-content: space-around;
+	transition: all 150ms;
+}
+
+.boton-email p:hover{
+	background-color: #ffec5e;
+	cursor: pointer;
 }
 
 .boton-email p a{
@@ -432,7 +443,14 @@ footer{
 .redes i{
 	color:white;
 	font-size: 30px;
+	transition: all 150ms;
 }
+
+.redes i:hover{
+	color:#ffc55f;
+	cursor:pointer;
+}
+
 
 @media (min-width:725px){
     .imagenes article{
@@ -516,6 +534,13 @@ footer{
 
 	.boton_register a{
 		width: 80%;
+	}
+
+	.banner1{
+		background-image: url(/images/banner1.png),url(/images/cerro.jpg);
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
 	}
 
 	.contenedor {
