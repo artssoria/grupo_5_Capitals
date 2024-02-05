@@ -38,6 +38,10 @@ app.get('/carrito', function(req, res) {
     res.sendFile(path.join(__dirname, 'views', 'carrito.html')); // 
 });
 
+app.get('/detalleproducto', function(req, res) {
+    res.sendFile(path.join(__dirname, 'views', 'detalleproducto.html')); // 
+});
+
 
 // Middleware para analizar el cuerpo de las solicitudes POST
 app.use(express.urlencoded({ extended: true }));
