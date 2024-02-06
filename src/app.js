@@ -9,6 +9,7 @@ const rutaProducto = require('./routes/producto');
 
 app.use(express.static('public'));
 
+
 app.set('view engine', 'ejs');
 app.set('views', './src/views');
 
@@ -24,7 +25,6 @@ app.use('/users', rutaUsers);
 app.use('/descubri', rutaDescubri);
 
 app.use('/producto', rutaProducto);
-
 
 
 
