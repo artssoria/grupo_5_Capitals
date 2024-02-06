@@ -6,11 +6,13 @@ const rutaHome = require('./routes/home');
 const rutaUsers = require('./routes/users');
 const rutaDescubri = require('./routes/descubri');
 const rutaProducto = require('./routes/producto');
+const rutaAdmin = require('./routes/admin');
 
 app.use(express.static('public'));
 
 
 app.set('view engine', 'ejs');
+
 app.set('views', './src/views');
 
 const port = process.env.PORT || 3000; 
@@ -26,6 +28,7 @@ app.use('/descubri', rutaDescubri);
 
 app.use('/producto', rutaProducto);
 
+app.use('/admin', rutaAdmin);
 
 
 
