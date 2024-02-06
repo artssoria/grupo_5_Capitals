@@ -1,8 +1,10 @@
 var express = require('express');
 var app = express();
 var path = require('path');
-const rutaHome = require('./routes/home')
-const rutaUsers = require('./routes/users')
+const rutaHome = require('./routes/home');
+const rutaUsers = require('./routes/users');
+const rutaDescubri = require('./routes/descubri');
+const rutaProducto = require('./routes/producto');
 
 
 app.use(express.static('public'));
@@ -13,23 +15,13 @@ app.use('/', rutaHome);
 
 app.use('/users', rutaUsers);
 
+app.use('/descubri', rutaDescubri);
+
+app.use('/producto', rutaProducto);
 
 
-// Ruta para la páginas descubri (4 html)
-app.get('/puna', function(req, res) {
-    res.sendFile(path.join(__dirname, 'views', 'puna.html')); // 
-});
-app.get('/quebrada', function(req, res) {
-    res.sendFile(path.join(__dirname, 'views', 'quebrada.html')); // 
-});
-app.get('/valle', function(req, res) {
-    res.sendFile(path.join(__dirname, 'views', 'valles.html')); // 
-});
 
-app.get('/yungas', function(req, res) {
-    res.sendFile(path.join(__dirname, 'views', 'yungas.html')); // 
-});
-// Ruta para la página de Login
+
 
 // Middleware para analizar el cuerpo de las solicitudes POST
 app.use(express.urlencoded({ extended: true }));
