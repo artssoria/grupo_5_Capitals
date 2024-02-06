@@ -11,48 +11,7 @@
     <title>TravelXJujuy</title>
 </head>
 <body>
-	<header>
-		<nav class="navbar">
-			<div class="fila_superior">
-				<div class="logo">
-					<img src="/images/logo.png" alt="Logo">
-				</div>
-				<div class="Texto_Logo">
-					<p>TravelXJujuy</p>
-				</div>
-			</div>
-			<div class="Botones_nav">
-				<ul>
-					<li class="guiad"><a href="/compra">Descubrí</a>
-						<ul>
-							<li><a href="/descubri/valles">Valles</a></li>
-							<li><a href="/descubri/quebrada">Quebrada</a></li>
-							<li><a href="/descubri/puna">Puna</a></li>
-							<li><a href="/descubri/yungas">Yungas</a></li>
-						</ul>
-					</li>
-
-					<li class="guia"><a href="#subtitulo1">Viajá</a></li>
-					<li class="guia"><a href="#Text_comentarios">Comentá</a></li>
-					<li class="carrito"><a href="/producto/carrito"><i class="fa-solid fa-cart-shopping"></i></a></li>
-					<li class="boton_login"><a href="/users/login"> Iniciar Sesión</a></li>
-					<li class="boton_register"><a href="/users/register">Registrate</a></li>
-				</ul>
-			</div>
-		</nav>
-		<div class="banner1">
-			<h2>¿Dónde inicia tu travesía?</h2>
-		</div>
-		<div class="banner2">
-			<div class="contenedor-titulo">
-				<h1 class="titulo">TravelXJujuy</h1>
-			</div>
-			<div class="contenedor-banner">
-				<p class="texto">Muchos lugares por descubrir<br>en una sola provincia</p>
-				<a class="boton" href="https://www.google.com/">Visita ahora</a>
-			</div>
-		</div>
-	</header>
+	<%- include('partials/header') %>
     
     <main class="contenedor">
 		<h2 class="subtitulo" id="subtitulo1">Ciudades de la provincia que te encantaría visitar</h2>
@@ -160,42 +119,6 @@
 		</div>
 	</main>
 
-	<footer>
-		<div class="bloque1">
-			<h4>Políticas legales</h4>
-			<ul>
-				<li>Términos y condiciones</li>
-				<li>Ayuda</li>
-				<li>Preguntas Frecuentes</li>
-			</ul>
-		</div>
-		<div class="bloque2">
-			<h4>Enlaces de interes</h4>
-			<ul>
-				<li>Servicios Públicos</li>
-				<li>Secretaría Turismo</li>
-				<li>Organismos Nacionales</li>
-			</ul>
-		</div>
-		<div class="bloque3">
-			<h4>Oficinas físicas</h4>
-			<ul>
-				<li>El alerce 2154 Barrio Carnaval</li>
-				<li>0800 - 2555 6000</li>
-				<li>Horario corrido de 9 a 13 hs y 18 a 21 hs</li>
-			</ul>
-		</div>
-		<div class="bloque4">
-			<div class="boton-email">
-				<p><a href="https://github.com/artssoria/grupo_5_Capitals">Repositorio</a></p>
-			</div>
-			<div class="redes">
-				<i class="fa-brands fa-square-instagram"></i>
-				<i class="fa-brands fa-square-facebook"></i>
-				<i class="fa-brands fa-square-x-twitter"></i>
-				<i class="fa-brands fa-square-whatsapp"></i>
-			</div>
-		</div>
-	</footer>
+	<%- include('partials/footer') %>
 </body>
 </html>

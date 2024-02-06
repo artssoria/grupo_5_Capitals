@@ -2,19 +2,19 @@ const path = require('path');
 
 const descubriController = {
     puna : (req,res) =>{
-        res.sendFile(path.join(__dirname, '../views/puna.html'))
+        res.render('puna')
     },
 
     valles : (req,res) =>{
-        res.sendFile(path.join(__dirname, '../views/valles.html'))
+        res.render('valles')
     },
 
     quebrada : (req,res) =>{
-        res.sendFile(path.join(__dirname,'../views/quebrada.html'))
+        res.render('quebrada')
     },
 
     yungas : (req,res) =>{
-        res.sendFile(path.join(__dirname, '../views/yungas.html'))
+        res.render('yungas')
     }
 };
 

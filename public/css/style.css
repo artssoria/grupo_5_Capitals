@@ -463,6 +463,10 @@ footer{
 	cursor:pointer;
 }
 
+.copy p{
+	color:white;
+	text-align: center;
+}
 
 @media (min-width:725px){
 

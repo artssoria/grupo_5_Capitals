@@ -1,15 +1,21 @@
 var express = require('express');
 var app = express();
 var path = require('path');
+
 const rutaHome = require('./routes/home');
 const rutaUsers = require('./routes/users');
 const rutaDescubri = require('./routes/descubri');
 const rutaProducto = require('./routes/producto');
 
-
 app.use(express.static('public'));
 
+app.set('view engine', 'ejs');
+app.set('views', './src/views');
+
 const port = process.env.PORT || 3000; 
+app.listen(port, function() {
+    console.log('Arrancando Express desde el puerto 3000');
+});
 
 app.use('/', rutaHome);
 
@@ -44,7 +50,3 @@ app.post('/login', (req, res) => {
     res.redirect('/');
 });
 
-
-app.listen(port, function() {
-    console.log('Arrancando Express desde el puerto 3000');
-});
