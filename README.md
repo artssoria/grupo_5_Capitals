@@ -14,7 +14,7 @@
 
 `nodemon src/app.js`
 
-Luego accede a la dirección en el navegador [http://](http://localhost:3000/)
+Luego accede a la dirección en el navegador `[http://](http://localhost:3000/)`
 
 ## TravelXJujuy
 Puedes ver nuestro boceto en https://wireframe.cc/6kdyTv
