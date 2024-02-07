@@ -1,0 +1,91 @@
+main{
+    margin: auto;
+    width: 90%;
+    font-family: amulya;
+    margin-bottom: 20px;
+}
+
+form{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 1000px;
+}
+
+form > h1{
+    color:#36173d;
+    height: 5%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.formulario{
+    background-color: #36173d;
+    border-radius: 10px;
+    width: 100%;
+    height: 95%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.formulario label{
+    color:white;
+    font-size: 20px;
+    line-height: 28px;
+}
+
+.bloque_simple{
+    flex:10%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.bloque_area{
+    flex:25%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.opcion{
+    flex:20%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.opciones{
+    display: flex;
+    flex-direction: column;
+}
+
+.opciones label{
+    display: flex;
+    justify-content: space-between;
+    gap:30px;
+}
+
+.botones{
+    flex:10%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+
+
+

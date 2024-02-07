@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/normal.css">
     <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="admin_carga.css">
+    <link rel="stylesheet" href="/css/admin_carga.css">
     <link rel="icon" href="/images/icono.png" type="image/png">
     <script src="https://kit.fontawesome.com/ca385f949f.js" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="/css/amulya.css">
@@ -17,7 +17,7 @@
     <main>
         <form>
             <h1>Carga de producto</h1>
-            <div class="seccion1">
+            <div class="formulario">
                 <div class="bloque_simple">
                     <label for="nombreProducto">Nombre del producto</label>
                     <input type="text" id="nombreProducto" name="nombreProducto">
@@ -35,18 +35,38 @@
 
                 <div class="opcion">
                     <label for="categoria_servicio">Categoría del servicio</label>
-                    <input type="radio" value="Viaje de egresados">
-                    <input type="radio" value="Viaje guíado">
-                    <input type="radio" value="Transporte solo">
-                    <input type="radio" value="Paquete traveler">
+                    <div class="opciones">
+                        <label for="categoria_servicio">Viaje de egresados
+                            <input type="radio" value="Egresados">
+                        </label>
+                        <label for="categoria_servicio">Viaje Guíado
+                            <input type="radio" value="Guíado">
+                        </label>
+                        <label for="categoria_servicio">Transporte solo
+                            <input type="radio" value="Transporte solo">
+                        </label>
+                        <label for="categoria_servicio">Paquete traveler
+                            <input type="radio" value="Paquete traveler">
+                        </label>
+                    </div>
                 </div>
 
                 <div class="opcion">
-                    <label for="categoria_Región">Categoría de la región</label>
-                    <input type="radio" value="Yungas">
-                    <input type="radio" value="Puna">
-                    <input type="radio" value="Valles">
-                    <input type="radio" value="Quebrada">
+                    <label for="categoria_Region">Categoría de la región</label>
+                    <div class="opciones">
+                        <label for="categoria_Region">Yungas
+                            <input type="radio" name="region" value="Yungas">
+                        </label>
+                        <label for="categoria_Region">Puna
+                            <input type="radio" name="region" value="Puna">
+                        </label>
+                        <label for="categoria_Region">Valles
+                            <input type="radio" name="region" value="Valles">
+                        </label>
+                        <label for="categoria_Region">Quebrada
+                            <input type="radio" name="region" value="Quebrada">
+                        </label>
+                    </div>
                 </div>
 
                 <div class="bloque_simple">
