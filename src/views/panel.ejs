@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/normal.css">
+    <link rel="icon" href="/images/icono.png" type="image/png">
+    <link rel="stylesheet" href="/css/style.css">
+	<script src="https://kit.fontawesome.com/ca385f949f.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="/css/amulya.css">
+    <link rel="stylesheet" href="/css/panel.css">
+    <title>TravelXJujuy</title>
+</head>
+<body>
+    <%- include('partials/headerAdmin') %>
+    <main>
+        <div class="cont">
+            <h1>Panel de Control</h1>
+            <div class="PanelControl">
+                <div class="Agregar">
+                    <h2>Agregar un nuevo producto</h2>
+                    <a href="/admin/carga-producto">Cargar</a>
+                </div>
+                <div class="Modificar">
+                    <h2>Modificar un producto existente</h2>
+                    <a href="/admin/modif-producto">Modificar</a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <%- include('partials/footer') %>
+</body>
+</html>
