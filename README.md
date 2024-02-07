@@ -5,7 +5,7 @@
 
 ### Clonar el repositorio
 
-`git clone https://github.com/travelxjujuy/repo.git`
+`git clone https://github.com/artssoria/grupo_5_Capitals.git`
 
 ### Instalar dependencias
 `npm install`
