@@ -1,16 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="/images/logo.png" type="image/x-icon">
-    <script src="https://kit.fontawesome.com/ca385f949f.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/css/stylelogin.css">
-    <link rel="stylesheet" href="/css/style.css">
-    <title>Iniciar Sesión</title>
-</head>
-<body>
-    
+<header>
     <nav class="navbar">
         <div class="fila_superior">
             <div class="logo">
@@ -22,7 +10,7 @@
         </div>
         <div class="Botones_nav">
             <ul>
-                <li class="guiad"><a href="#">Descubrí</a>
+                <li class="guiad"><a href="/compra">Descubrí</a>
                     <ul>
                         <li><a href="/descubri/valles">Valles</a></li>
                         <li><a href="/descubri/quebrada">Quebrada</a></li>
@@ -39,15 +27,4 @@
             </ul>
         </div>
     </nav>
-<!-- Formulario de inicio de sesion -->
-        <div class="login-form">
-            <div><h1>Iniciar Sesión</h1></div>
-            <form action="/login" method="post">
-                <input type="text" id="username" name="username" placeholder="Usuario" required>
-                <input type="password" id="password" name="password" placeholder="Contraseña" required>               
-                <button type="submit">Iniciar Sesión</button>
-            </form>
-        </div>
-        <%- include('partials/footer') %>
-</body>
-</html>
+</header>

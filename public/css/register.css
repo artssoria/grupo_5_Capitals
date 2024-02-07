@@ -8,11 +8,13 @@
 body {
     font-family: 'Amulya', sans-serif;
     background-color: #36173D;
+    display: block;
+    position: relative;
 }
 h1{
     text-align: center;
-    margin-top: 30px;
-    color: #CCC;
+    margin: 30px;
+    color: #000000;
 }
 .register-form {
     width: 350px;
@@ -36,4 +38,21 @@ h1{
     color: #36173D;
     font-weight: bold;
     background-color: #FFEC5E;
+}
+.register-form{
+    position: relative;
+}
+
+.register-form form label{
+    text-align: center;
+    display: block;
+    margin: 8px;
+
+}
+.register-form form label .terminos{
+    position: absolute;
+    top: 30em;
+    left: 10.5em;
+    display: block;
+
 }

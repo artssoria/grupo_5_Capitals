@@ -3,25 +3,182 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/ca385f949f.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/css/register.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/modal.css">
     <title>Registrate</title>
 </head>
-<h1>Registrate y forma parte de TravelXJujuy</h1>
 <body>
-<!-- Formulario de registro -->
-        <div class="register-form">
-            <form action="/register" method="post">
-                <input type="text" id="name" name="name" placeholder="Nombre y Apellido" required>
-                <input type="email" id="email" name="email" placeholder="Email" required>
-                <input type="text" id="username" name="username" placeholder="Usuario" required>
-                <input type="password" id="password" name="password" placeholder="Contraseña" required>
-                
-                <label for="terms">Acepto los términos y condiciones</label>
-                <input type="checkbox" id="terms" name="terms" required>
-                
-                <button type="submit">Registrarse</button>
-            </form>
+    <nav class="navbar">
+        <div class="fila_superior">
+            <div class="logo">
+                <a href="/"><img src="/images/logo.png" alt="Logo"></a>
+            </div>
+            <div class="Texto_Logo">
+                <p>TravelXJujuy</p>
+            </div>
         </div>
+        <div class="Botones_nav">
+            <ul>
+                <li class="guiad"><a href="#">Descubrí</a>
+                    <ul>
+                        <li><a href="/descubri/valles">Valles</a></li>
+                        <li><a href="/descubri/quebrada">Quebrada</a></li>
+                        <li><a href="/descubri/puna">Puna</a></li>
+                        <li><a href="/descubri/yungas">Yungas</a></li>
+                    </ul>
+                </li>
+
+                <li class="guia"><a href="/producto/listado-productos">Viajá</a></li>
+                <li class="guia"><a href="#Text_comentarios">Comentá</a></li>
+                <li class="carrito"><a href="/producto/carrito"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                <li class="boton_login"><a href="/users/login"> Iniciar Sesión</a></li>
+                <li class="boton_register"><a href="/users/register">Registrate</a></li>
+            </ul>
+        </div>
+    </nav>
+<!-- Formulario de registro -->
+        <!-- Formulario de registro -->
+<div class="register-form">
+    <div>
+        <h1>Registrate y forma parte de TravelXJujuy</h1>
+    </div>
+    <form action="/register" method="post">
+        <input type="text" id="name" name="name" placeholder="Nombre y Apellido" required>
+        <input type="email" id="email" name="email" placeholder="Email" required>
+        <input type="text" id="username" name="username" placeholder="Usuario" required>
+        <input type="password" id="password" name="password" placeholder="Contraseña" required>
+        
+        <label class="terminos"  for="terms">Acepto los <a  href="#" id="termsLink">términos y condiciones</a></label>
+        <br>
+        <input type="checkbox" id="terms" name="terms" required>
+        <button type="submit">Registrarse</button>
+    </form>
+</div>
+
+<!-- Modal -->
+<div id="termsModal" class="modal">
+    <div class="modal-content">
+        <span class="close">X</span>
+        <html>
+
+<head>
+  <title>Términos y Condiciones - TravelXJujuy</title>
+</head>
+
+<main>
+
+  <h1>Términos y Condiciones TravelXJujuy</h1>
+  <br>
+
+  <p>
+    Bienvenido a TravelXJujuy. Por favor lea atentamente estos Términos y Condiciones 
+    antes de utilizar nuestros servicios. Este documento establece las reglas que rigen 
+    el uso de nuestro sitio web y los servicios que ofrecemos.
+  </p>
+<br>
+  <h2>1. Información general</h2>
+<br>
+  <p>
+    TravelXJujuy es una empresa registrada en Argentina dedicada a la venta de paquetes 
+    turísticos en la provincia de Jujuy. Nuestra página web es https://www.travelxjujuy.com.ar.
+  </p>
+<br>
+  <h2>2. Servicios ofrecidos</h2>
+<br>
+  <p>
+    Ofrecemos paquetes turísticos que incluyen alojamiento, transporte, excursiones y otras 
+    actividades en diferentes destinos de la provincia de Jujuy. Trabajamos con distintos 
+    proveedores locales para armar estos paquetes.
+  </p>
+<br>
+  <h2>3. Precios y reservas</h2>
+<br>
+  <p>
+    Los precios de los paquetes turísticos se muestran en nuestro sitio web en pesos argentinos 
+    e incluyen todos los impuestos. Los precios pueden cambiar según disponibilidad.
+  </p>
+<br>
+  <p>
+    Las reservas pueden realizarse a través de nuestro sitio web o contactándonos por teléfono o 
+    email. Se requiere un depósito del 50% al momento de confirmar la reserva. El saldo restante 
+    deberá abonarse al menos 15 días antes de la fecha de viaje.
+  </p>
+<br>
+  <h2>4. Cancelaciones y reembolsos</h2>
+<br>
+  <p>
+    Las cancelaciones deben realizarse por escrito vía email. Si se cancela con más de 30 días de 
+    anticipación se reembolsará el depósito inicial descontando un 10% en concepto de gastos 
+    administrativos. Si se cancela entre 15 y 30 días antes se reembolsará el 50% del depósito. 
+    Dentro de los 15 días previos al viaje no se realizan reembolsos.
+  </p>
+<br>
+  <h2>5. Documentación necesaria</h2>  
+<br>
+  <p>
+    Los pasajeros son responsables de contar con toda la documentación necesaria para realizar el viaje 
+    contratado, incluyendo pasaporte vigente, visas, certificados de vacunación, etc. La no presentación de 
+    algún requisito no exime de las penalidades por cancelación.
+  </p>
+<br>
+  <h2>6. Responsabilidad</h2>
+<br>
+  <p>
+    TravelXJujuy actúa únicamente como intermediario entre el pasajero y las empresas prestadoras de 
+    servicios turísticos, por lo que no asume responsabilidad por retrasos, accidentes, huelgas u otras 
+    irregularidades fuera de nuestro control directo. Tampoco somos responsables por el extravío de 
+    objetos personales durante el viaje.
+  </p>
+<br>
+  <h2>7. Legislación aplicable</h2>
+<br>
+  <p>
+    Estos Términos y Condiciones se rigen por las leyes de la República Argentina. Cualquier disputa 
+    relacionada será resuelta por los tribunales de la provincia de Jujuy. 
+  </p>
+<br>
+  <p>
+    Al utilizar nuestros servicios el usuario acepta haber leído y estar de acuerdo con estos 
+    Términos y Condiciones. TravelXJujuy se reserva el derecho de realizar cambios en cualquier momento.
+  </p>
+<br>
+</main>
+
+
+    </div>
+</div>
+
+<script>
+    var modal = document.getElementById("termsModal");
+
+    // Get the link that opens the modal
+    var link = document.getElementById("termsLink");
     
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+    
+    // When the user clicks the link, open the modal 
+    link.onclick = function(event) {
+        event.preventDefault();
+        modal.style.display = "block";
+    }
+    
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+    
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+
+        <%- include('partials/footer') %>
+        
 </body>
 </html>

@@ -1,5 +1,29 @@
 # grupo_5_Capitals
 
+## Instalación
+### Para instalar el proyecto se requiere:
+
+### Clonar el repositorio
+
+`git clone https://github.com/artssoria/grupo_5_Capitals.git`
+
+### Instalar dependencias
+`npm install`
+
+### Correr el proyecto
+
+`nodemon src/app.js`
+
+Luego accede a la dirección en el navegador `http://localhost:3000/`
+
+Puedes accedes a la lista de productos por aqui `http://localhost:3000/producto/listado-productos`
+
+Para carga de producto `http://localhost:3000/admin/carga-producto`
+
+Visualizar el panel `http://localhost:3000/admin/panel`
+
+
+
 ## TravelXJujuy
 Puedes ver nuestro boceto en https://wireframe.cc/6kdyTv
 
