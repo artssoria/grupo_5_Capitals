@@ -9,6 +9,11 @@
 
 ### Instalar dependencias
 `npm install`
+
+### Correr el proyecto
+
+`nodemon src/app.js`
+
 ## TravelXJujuy
 Puedes ver nuestro boceto en https://wireframe.cc/6kdyTv
 
