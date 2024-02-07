@@ -1,5 +1,14 @@
 # grupo_5_Capitals
 
+## Instalación
+### Para instalar el proyecto se requiere:
+
+### Clonar el repositorio
+
+`git clone https://github.com/travelxjujuy/repo.git`
+
+### Instalar dependencias
+`npm install`
 ## TravelXJujuy
 Puedes ver nuestro boceto en https://wireframe.cc/6kdyTv
 
