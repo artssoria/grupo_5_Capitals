@@ -15,7 +15,7 @@
 <body>
     <%- include('partials/headerAdmin') %>
     <main>
-        <form>
+        <form method="POST" action="/productosV">
             <h1>Carga de producto</h1>
             <div class="formulario">
                 <div class="bloque_simple">
@@ -37,16 +37,16 @@
                     <label for="categoria_servicio">Categoría del servicio</label>
                     <div class="opciones">
                         <label for="categoria_servicio">Viaje de egresados
-                            <input type="radio" value="Egresados">
+                            <input type="radio" name="servicio" value="Egresados">
                         </label>
                         <label for="categoria_servicio">Viaje Guíado
-                            <input type="radio" value="Guíado">
+                            <input type="radio" name="servicio" value="Guíado">
                         </label>
                         <label for="categoria_servicio">Transporte solo
-                            <input type="radio" value="Transporte solo">
+                            <input type="radio" name="servicio" value="Transporte solo">
                         </label>
                         <label for="categoria_servicio">Paquete traveler
-                            <input type="radio" value="Paquete traveler">
+                            <input type="radio" name="servicio" value="Paquete traveler">
                         </label>
                     </div>
                 </div>
@@ -75,8 +75,8 @@
 
                 </div>
                 <div class="botones">
-                    <button>Enviar</button>
-                    <button>Borrar</button>
+                    <button type="submit">Enviar</button>
+                    <button type="reset">Borrar</button>
                 </div>
             </div>
         </form>
