@@ -14,7 +14,15 @@
 
 `nodemon src/app.js`
 
-Luego accede a la dirección en el navegador `[http://](http://localhost:3000/)`
+Luego accede a la dirección en el navegador `http://localhost:3000/`
+
+Puedes accedes a la lista de productos por aqui `http://localhost:3000/producto/listado-productos`
+
+Para carga de producto `http://localhost:3000/admin/carga-producto`
+
+Visualizar el panel `http://localhost:3000/admin/panel`
+
+
 
 ## TravelXJujuy
 Puedes ver nuestro boceto en https://wireframe.cc/6kdyTv
