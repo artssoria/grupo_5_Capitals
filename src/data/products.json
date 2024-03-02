@@ -25,5 +25,14 @@
     "servicio_product": "Transporte solo",
     "region_product": "Quebrada",
     "precio_product": "50000"
+  },
+  {
+    "id": 4,
+    "nombre_product": "Viaje por los campos",
+    "descripcion": "campos",
+    "imagen_product": "/images/1709362694637.png",
+    "servicio_product": "Egresados",
+    "region_product": "Yungas",
+    "precio_product": "60000"
   }
 ]

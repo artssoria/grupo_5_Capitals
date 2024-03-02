@@ -38,24 +38,33 @@
             </ul>
         </div>
     </nav>
-<!-- Formulario de registro -->
+
         <!-- Formulario de registro -->
-<div class="register-form">
-    <div>
-        <h1>Registrate y forma parte de TravelXJujuy</h1>
-    </div>
-    <form action="/register" method="post">
-        <input type="text" id="name" name="name" placeholder="Nombre y Apellido" required>
-        <input type="email" id="email" name="email" placeholder="Email" required>
-        <input type="text" id="username" name="username" placeholder="Usuario" required>
-        <input type="password" id="password" name="password" placeholder="Contraseña" required>
-        
-        <label class="terminos"  for="terms">Acepto los <a  href="#" id="termsLink">términos y condiciones</a></label>
-        <br>
-        <input type="checkbox" id="terms" name="terms" required>
-        <button type="submit">Registrarse</button>
-    </form>
-</div>
+        <div class="register-form">
+          <div>
+              <h1>Registrate y forma parte de TravelXJujuy</h1>
+          </div>
+          <form action="/register" method="post">
+              <input type="hidden" id="id" name="id">
+              <input type="text" id="firstName" name="firstName" placeholder="Nombre" required>
+              <input type="text" id="lastName" name="lastName" placeholder="Apellido" required>
+              <input type="email" id="email" name="email" placeholder="Email" required>
+              <input type="password" id="password" name="password" placeholder="Contraseña" required>
+              <input type="tel" id="phone" name="phone" placeholder="Telefono" required>
+              <input type="text" id="nationality" name="nationality" placeholder="Nacionalidad" required>
+              <input type="text" id="province" name="province" placeholder="Provincia o estado" required>
+              <select id="userType" name="userType" required>
+                  <option value="">Tipo de usuario</option>
+                  <option value="admin">Admin</option>
+                  <option value="user">User</option>
+              </select>
+              <label class="terminos" for="terms">Acepto los <a href="#" id="termsLink">términos y condiciones</a></label>
+              <br>
+              <input type="checkbox" id="terms" name="terms" required>
+              <button type="submit">Registrarse</button>
+          </form>
+      </div>
+      
 
 <!-- Modal -->
 <div id="termsModal" class="modal">
