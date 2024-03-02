@@ -6,48 +6,19 @@
 	<%- include('partials/header2') %>
     <!-- cards listado -->
     <main>
-        <div class="cards1">
-            <h1>Quebrada</h1>
-            <img src="/images/Maimara.jpg" alt="Maimará">
-            <span>Detalle:</span>
-            <p>Precio: $ </p>
-            <p>Hospedaje: </p>
-            <p>servicio</p>
-            <p>Region:</p>
-            <div><a href="/producto/carrito" class="btn">Agregar al carrito</a></div>
-        </div>
-        <div class="cards1">
-            <h1>Puna</h1>
-            <img src="/images/Salinas-Grandes.png" alt="Salinas Grandes">
-            <span>Detalle:</span>
-            <p>Precio: $ </p>
-            <p>Hospedaje: </p>
-            <p>servicio: </p>
-            <p>Region:</p>
-            <div><a href="/producto/carrito" class="btn">Agregar al carrito</a></div>
-        </div>
-        <div class="cards1">
-            <h1>Yungas</h1>
-            <img src="/images/Yungas.jpg" alt="Yungas">
-            <span>Detalle:</span>
-            <p>Precio: $ </p>
-            <p>Hospedaje: </p>
-            <p>servicio: </p>
-            <p>Region:</p>
-            
-            <div><a href="/producto/carrito" class="btn">Agregar al carrito</a></div>
-        </div>
-        <div class="cards1">
-            <h1>Valles</h1>
-            <img src="/images/TermasReyes.png" alt="Termas de Reyes">
-            <span>Detalle:</span>
-            <p>Precio: $ </p>
-            <p>Hospedaje: </p>
-            <p>servicio</p>
-            <p>Region:</p>
-            <div><a href="/producto/carrito" class="btn">Agregar al carrito</a></div>
-        </div>
+        <% productos.forEach(function (producto){ %>
+            <div class="cards1">
+                <h1><%= producto.nombre_product %></h1>
+                <img src="<%= producto.imagen_product %>" alt="Imagen del producto">
+                <span>Detalle:<%= producto.descripcion %> </span>
+                <p>Precio: $<%= producto.precio_product %> </p>
+                <p>Servicio: <%= producto.servicio_product %> </p>
+                <p>Region: <%= producto.region_product %> </p>
+                <div><a href="/producto/carrito" class="btn">Agregar al carrito</a></div>
+            </div>
+        <% }) %>
     </main>
+    
 <!-- footer -->
     <%- include('partials/footer') %>
 </body>

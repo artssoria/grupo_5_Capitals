@@ -1,52 +1,29 @@
 [
-    {
-      "id": "1",
-      "nombre_product": "paquete de viaje",
-      "region_product": "puna",
-      "imagen_product": "img",
-      "hospedaje_produc": "hotel",
-      "descripcion": "Viaje familiar, visita a lugares turisticos y catering",
-      "servicio_product": "familiar",
-      "precio_product": "60000"
-    },
-    {
-      "id": "2",
-      "nombre_product": "paquete de viaje",
-      "region_product": "quebrada",
-      "imagen_product": "img",
-      "hospedaje_produc": "hostal",
-      "descripcion": "Viaje relajante en pareja",
-      "servicio_product": "express",
-      "precio_product": "50000"
-    },
-    {
-      "id": "3",
-      "nombre_product": "paquete de viaje",
-      "region_product": "Valles",
-      "imagen_product": "img",
-      "hospedaje_produc": "hotel",
-      "descripcion": "Viaje de estudiantes",
-      "servicio_product": "viaje de egresados",
-      "precio_product": "70000"
-    },
-    {
-      "id": "4",
-      "nombre_product": "paquete de viaje",
-      "region_product": "yungas",
-      "imagen_product": "img",
-      "hospedaje_produc": "hotel",
-      "descripcion": "carnavales",
-      "servicio_product": "familiar",
-      "precio_product": "70000"
-    },
-    {
-      "id": "5",
-      "nombre_product": "paquete de viaje",
-      "region_product": "puna",
-      "imagen_product": "img",
-      "hospedaje_produc": "hotel",
-      "descripcion": "descripcion del producto",
-      "servicio_product": "familiar, viaje de egresados y express",
-      "precio_product": "precio entre 10000 y 100000"
-    }
-  ]
+  {
+    "id": 1,
+    "nombre_product": "Viaje de locura",
+    "descripcion": "por las yungas carnaval",
+    "imagen_product": "/images/1709362246469.jpg",
+    "servicio_product": "Guíado",
+    "region_product": "Yungas",
+    "precio_product": "40000"
+  },
+  {
+    "id": 2,
+    "nombre_product": "viaje de momentos",
+    "descripcion": "viaje de parejas",
+    "imagen_product": "/images/1709362291205.png",
+    "servicio_product": "Paquete traveler",
+    "region_product": "Valles",
+    "precio_product": "30000"
+  },
+  {
+    "id": 3,
+    "nombre_product": "Viaje de pasion",
+    "descripcion": "pasion",
+    "imagen_product": "/images/1709362335536.png",
+    "servicio_product": "Transporte solo",
+    "region_product": "Quebrada",
+    "precio_product": "50000"
+  }
+]

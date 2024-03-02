@@ -15,12 +15,12 @@
 <body>
     <%- include('partials/headerAdmin') %>
     <main>
-        <form method="POST" action="/productosV">
+        <form method="POST" action="/producto/carga-productos" enctype="multipart/form-data">
             <h1>Carga de producto</h1>
             <div class="formulario">
                 <div class="bloque_simple">
-                    <label for="nombreProducto">Nombre del producto</label>
-                    <input type="text" id="nombreProducto" name="nombreProducto">
+                    <label for="nombre_product">Nombre del producto</label>
+                    <input type="text" id="nombre_product" name="nombre_product">
                 </div>
 
                 <div class="bloque_area">
@@ -29,49 +29,49 @@
                 </div>
 
                 <div class="bloque_simple">
-                    <label for="imagen">Subir imagen</label>
-                    <input type="file">
+                    <label for="imagen_product">Subir imagen</label>
+                    <input type="file" name="imagen_product">
                 </div>
 
                 <div class="opcion">
-                    <label for="categoria_servicio">Categoría del servicio</label>
+                    <label for="servicio_product">Categoría del servicio</label>
                     <div class="opciones">
-                        <label for="categoria_servicio">Viaje de egresados
-                            <input type="radio" name="servicio" value="Egresados">
+                        <label for="servicio_product">Viaje de egresados
+                            <input type="radio" name="servicio_product" value="Egresados">
                         </label>
-                        <label for="categoria_servicio">Viaje Guíado
-                            <input type="radio" name="servicio" value="Guíado">
+                        <label for="servicio_product">Viaje Guíado
+                            <input type="radio" name="servicio_product" value="Guíado">
                         </label>
-                        <label for="categoria_servicio">Transporte solo
-                            <input type="radio" name="servicio" value="Transporte solo">
+                        <label for="servicio_product">Transporte solo
+                            <input type="radio" name="servicio_product" value="Transporte solo">
                         </label>
-                        <label for="categoria_servicio">Paquete traveler
-                            <input type="radio" name="servicio" value="Paquete traveler">
+                        <label for="servicio_product">Paquete traveler
+                            <input type="radio" name="servicio_product" value="Paquete traveler">
                         </label>
                     </div>
                 </div>
 
                 <div class="opcion">
-                    <label for="categoria_Region">Categoría de la región</label>
+                    <label for="region_product">Categoría de la región</label>
                     <div class="opciones">
-                        <label for="categoria_Region">Yungas
-                            <input type="radio" name="region" value="Yungas">
+                        <label for="region_product">Yungas
+                            <input type="radio" name="region_product" value="Yungas">
                         </label>
-                        <label for="categoria_Region">Puna
-                            <input type="radio" name="region" value="Puna">
+                        <label for="region_product">Puna
+                            <input type="radio" name="region_product" value="Puna">
                         </label>
-                        <label for="categoria_Region">Valles
-                            <input type="radio" name="region" value="Valles">
+                        <label for="region_product">Valles
+                            <input type="radio" name="region_product" value="Valles">
                         </label>
-                        <label for="categoria_Region">Quebrada
-                            <input type="radio" name="region" value="Quebrada">
+                        <label for="region_product">Quebrada
+                            <input type="radio" name="region_product" value="Quebrada">
                         </label>
                     </div>
                 </div>
 
                 <div class="bloque_simple">
-                    <label for="precio">Precio de producto</label>
-                    <input type="number" id="precio" name="precio">
+                    <label for="precio_product">Precio de producto</label>
+                    <input type="number" id="precio_product" name="precio_product">
 
                 </div>
                 <div class="botones">
