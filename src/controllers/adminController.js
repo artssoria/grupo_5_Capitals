@@ -2,7 +2,9 @@ const path = require('path');
 const fs = require('fs');
 const filePath = path.join(__dirname, '../data/products.json');
 const crypto = require('crypto');
-const products = require('../data/products.json');
+
+
+let products = require('../data/products.json');
 
 const adminController = {
     carga: (req,res) =>{
@@ -67,6 +69,20 @@ const adminController = {
                 };
             });
         });
+    },
+
+    eliminarProducto: (req,res) =>{
+        let idToDelete = +req.params.idProducto;
+        products = products.filter(e => e.id != idToDelete);
+
+        fs.writeFileSync(
+            filePath,
+            JSON.stringify(products, null, 4),
+            {
+                encoding:"utf-8"
+            }
+        );
+        res.redirect('/admin/modif-producto');
     }
 };
 

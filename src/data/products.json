@@ -1,42 +1,42 @@
 [
-  {
-    "id": 1,
-    "nombre_product": "Viaje de locura",
-    "descripcion": "por las yungas carnaval",
-    "imagen_product": "/images/1709362246469.jpg",
-    "servicio_product": "Express",
-    "region_product": "Yungas",
-    "precio_product": "40000",
-    "hospedaje_product": "Hotel"
-  },
-  {
-    "id": 2,
-    "nombre_product": "viaje de momentos",
-    "descripcion": "viaje de parejas",
-    "imagen_product": "/images/1709362291205.png",
-    "servicio_product": "Familiar",
-    "region_product": "Valles",
-    "precio_product": "30000",
-    "hospedaje_product": "Hostal"
-  },
-  {
-    "id": 3,
-    "nombre_product": "Viaje de pasion",
-    "descripcion": "pasion",
-    "imagen_product": "/images/1709362335536.png",
-    "servicio_product": "Express",
-    "region_product": "Quebrada",
-    "precio_product": "50000",
-    "hospedaje_product": "Hotel"
-  },
-  {
-    "id": 4,
-    "nombre_product": "Viaje por los campos",
-    "descripcion": "campos",
-    "imagen_product": "/images/1709362694637.png",
-    "servicio_product": "Egresados",
-    "region_product": "Yungas",
-    "precio_product": "60000",
-    "hospedaje_product": "Hostal"
-  }
+    {
+        "id": 1,
+        "nombre_product": "Viaje de locura",
+        "descripcion": "por las yungas carnaval",
+        "imagen_product": "/images/1709362246469.jpg",
+        "servicio_product": "Express",
+        "region_product": "Yungas",
+        "precio_product": "40000",
+        "hospedaje_product": "Hotel"
+    },
+    {
+        "id": 2,
+        "nombre_product": "viaje de momentos",
+        "descripcion": "viaje de parejas",
+        "imagen_product": "/images/1709362291205.png",
+        "servicio_product": "Familiar",
+        "region_product": "Valles",
+        "precio_product": "30000",
+        "hospedaje_product": "Hostal"
+    },
+    {
+        "id": 3,
+        "nombre_product": "Viaje de pasion",
+        "descripcion": "pasion",
+        "imagen_product": "/images/1709362335536.png",
+        "servicio_product": "Express",
+        "region_product": "Quebrada",
+        "precio_product": "50000",
+        "hospedaje_product": "Hotel"
+    },
+    {
+        "id": 4,
+        "nombre_product": "Viaje por los campos",
+        "descripcion": "campos",
+        "imagen_product": "/images/1709362694637.png",
+        "servicio_product": "Egresados",
+        "region_product": "Yungas",
+        "precio_product": "60000",
+        "hospedaje_product": "Hostal"
+    }
 ]

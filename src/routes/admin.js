@@ -29,8 +29,6 @@ router.get('/edit/:idProducto', adminController.edit);
 
 router.put('/edit', adminController.actualizar);
 
-router.delete('/delete/:idProducto', (req,res) =>{
-    res.send('FUI por DELETE');
-})
+router.delete('/delete/:idProducto', adminController.eliminarProducto);
 
 module.exports = router;
