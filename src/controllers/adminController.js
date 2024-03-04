@@ -6,7 +6,7 @@ const adminController = {
         res.render('carga-productos')
     },
 
-    modif: (req,res) => {
+    listado: (req,res) => {
         const filePath = path.join(__dirname, '../data/products.json');
         let obtenerProductos = fs.readFileSync(filePath, 'utf-8');
         let productos = JSON.parse(obtenerProductos);
@@ -15,8 +15,17 @@ const adminController = {
     },
 
     panel: (req,res) => {
-        res.render('panel')
-    }
+        res.render('panel');
+    },
+
+    edit: (req,res) =>{
+        const filePath = path.join(__dirname, '../data/products.json');
+        let obtenerProductos = fs.readFileSync(filePath, 'utf-8');
+        let productos = JSON.parse(obtenerProductos);
+        let idProducto = (req.params.idProducto)- 1;
+        let productoToEdit = productos[idProducto];
+        res.render("productEdit", {'productoToEdit': productoToEdit});
+    } 
 };
 
 module.exports = adminController;

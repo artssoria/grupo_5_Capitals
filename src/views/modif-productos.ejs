@@ -26,8 +26,10 @@
                             <img src=<%=listadoDeProductos[i].imagen_product%> alt="imagen del producto">
                         </div>
                         <div class="Botones_cont">
-                            <button>Modificar</button>
-                            <button>Eliminar</button>
+                            <button onclick="window.location.href='/admin/edit/<%= listadoDeProductos[i].id%>'">Modificar</button>
+                            <form action="/producto/delete/<%= listadoDeProductos[i]%>?_method=DELETE" method="POST">
+                                <button type="submit">Eliminar</button>
+                            </form>
                         </div>
                     </div>
                 <% } %>

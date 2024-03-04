@@ -2,11 +2,15 @@ var express = require('express');
 var app = express();
 var path = require('path');
 const bodyParser = require('body-parser');
+const methodOverride = require('method-override');
 const multer = require('multer');
 
 // Aquí es donde debes usar bodyParser
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+
+//Metodo de override para procesar put y delete
+app.use(methodOverride("_method"));
 
 // Configura multer para almacenar los archivos cargados en la carpeta /public/images
 const storage = multer.diskStorage({
@@ -46,7 +50,7 @@ app.use('/producto', rutaProducto);
 app.use('/admin', rutaAdmin);
 
 // Middleware para analizar el cuerpo de las solicitudes POST
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: false }));
 
 // capturas del formulario de products.json
 app.post('/carga-productos', (req, res) =>{
