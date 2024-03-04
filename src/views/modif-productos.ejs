@@ -17,18 +17,21 @@
         <div class="Principal_cont">
             <h1>Listado de productos actuales</h1>
             <div class="productos_cont">
-                <div class="Producto_cont">
-                    <div class="Nombre_cont">
-                        <h2></h2>
+                <% for (let i = 0; i < listadoDeProductos.length; i++){ %>
+                    <div class="Producto_cont">
+                        <div class="Nombre_cont">
+                            <h2><%= listadoDeProductos[i].nombre_product %></h2>
+                        </div>
+                        <div class="imagen_cont">
+                            <img src=<%=listadoDeProductos[i].imagen_product%> alt="imagen del producto">
+                        </div>
+                        <div class="Botones_cont">
+                            <button>Modificar</button>
+                            <button>Eliminar</button>
+                        </div>
                     </div>
-                    <div class="imagen_cont">
-                        <img src="" alt="">
-                    </div>
-                    <div class="Botones_cont">
-                        <button>Modificar</button>
-                        <button>Eliminar</button>
-                    </div>
-                </div>
+                <% } %>
+                
             </div>
 
 
