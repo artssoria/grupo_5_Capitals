@@ -64,12 +64,17 @@ h1{
     align-items: center;
 }
 
+.detalles_producto_cont p{
+    color:#ff4845;
+    font-weight: bold;
+}
+
 .fil1{
+    width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around;
-    gap: 40px;
+    justify-content: space-between;
     height: 40px;
 
 }
@@ -79,11 +84,11 @@ h1{
 }
 
 .fil2{
+    width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around;
-    gap: 100px;
+    justify-content: space-between;
     height: 40px;
 }
 

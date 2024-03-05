@@ -20,7 +20,7 @@ const rutaDescubri = require('./routes/descubri');
 const rutaProducto = require('./routes/producto');
 const rutaAdmin = require('./routes/admin');
 
-// static para funcionar las vistas
+// static para establecer la ruta de public como estática
 app.use(express.static('public'));
 
 app.set('view engine', 'ejs');
@@ -36,6 +36,10 @@ app.use('/users', rutaUsers);
 app.use('/descubri', rutaDescubri);
 app.use('/producto', rutaProducto);
 app.use('/admin', rutaAdmin);
+
+app.use((req,res,next)=>{
+    res.status(404).render('not-found')
+});
 
 // capturas del formulario de products.json
 app.post('/carga-productos', (req, res) =>{
