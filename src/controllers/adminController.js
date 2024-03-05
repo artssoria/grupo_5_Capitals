@@ -3,7 +3,6 @@ const fs = require('fs');
 const filePath = path.join(__dirname, '../data/products.json');
 const crypto = require('crypto');
 
-
 let products = require('../data/products.json');
 
 const adminController = {
@@ -14,22 +13,19 @@ const adminController = {
     subir: (req,res) =>{
         let newProduct = req.body;
 
-        newProduct.id = `${products.length + 1}`;
+        newProduct.id = parseInt(`${products.length + 1}`);
 
         newProduct.imagen_product = "/images/" + req.file?.filename || "default-image.png";
 
         products.push(newProduct);
 
-        fs.writeFileSync( filePath, JSON.stringify(products, null, 2));
+        fs.writeFileSync( filePath, JSON.stringify(products, null, 4));
 
         res.redirect('/admin/modif-producto');
     },
 
     listado: (req,res) => {
-        let obtenerProductos = fs.readFileSync(filePath, 'utf-8');
-        let productos = JSON.parse(obtenerProductos);
-        res.render('modif-productos', {listadoDeProductos: productos});
-
+        res.render('modif-productos', {products});
     },
 
     panel: (req,res) => {
@@ -37,38 +33,46 @@ const adminController = {
     },
 
     edit: (req,res) =>{
-        let obtenerProductos = fs.readFileSync(filePath, 'utf-8');
-        let productos = JSON.parse(obtenerProductos);
-        let idProducto = (req.params.idProducto)- 1;
-        let productoToEdit = productos[idProducto];
-        res.render("productEdit", {'productoToEdit': productoToEdit});
+        let idToEdit = +req.params.idProducto;
+        let idFound = products.find(e => e.id == idToEdit)
+        res.render("productEdit", {idFound});
     },
 
     actualizar: (req,res)=>{
-        const { id, nuevaInfo } = req.body;
-        fs.readFile(filePath, 'utf8', (err, data) => {
-            if (err) {
-              console.error(err);
-              return res.status(500).send('Error al leer el archivo');
-            }
-      
-            let products = JSON.parse(data);
+        let idToUpdate = +req.params.idProducto;
+        const {nombre_product, descripcion, servicio_product, region_product, precio_product, hospedaje_product}= req.body;
+        let idEncontrar = products.find(e => e.id == idToUpdate);
+        let rutaOriginalImagen = idEncontrar.imagen_product;
 
-            const productIndex = products.findIndex(product => product.id === id);
-
-            if (productIndex === -1) {
-                return res.status(404).send('Producto no encontrado');
+        products.forEach(e => {
+            if (e.id == idToUpdate){
+                if(req.file){
+                    e.nombre_product = nombre_product;
+                    e.descripcion = descripcion;
+                    e.imagen_product = '/images/' + req.file?.filename || 'default.png';
+                    e.servicio_product = servicio_product;
+                    e.region_product = region_product;
+                    e.precio_product = precio_product;
+                    e.hospedaje_product = hospedaje_product;
+                }else{
+                    e.nombre_product = nombre_product;
+                    e.descripcion = descripcion;
+                    e.imagen_product = rutaOriginalImagen;
+                    e.servicio_product = servicio_product;
+                    e.region_product = region_product;
+                    e.precio_product = precio_product;
+                    e.hospedaje_product = hospedaje_product;
+                }
             };
-
-            products[productIndex] = { ...products[productIndex], ...nuevaInfo };
-
-            fs.writeFile(filePath, JSON.stringify(products, null, 2), err => {
-                if (err) {
-                  console.error(err);
-                  return res.status(500).send('Error al escribir en el archivo');
-                };
-            });
         });
+        fs.writeFileSync(
+            filePath,
+            JSON.stringify(products, null ,4),
+            {
+                encoding: "utf-8"
+            }
+        );
+        res.redirect('/admin/modif-producto');
     },
 
     eliminarProducto: (req,res) =>{

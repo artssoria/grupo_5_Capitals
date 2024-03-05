@@ -27,7 +27,7 @@ router.get('/panel', adminController.panel);
 
 router.get('/edit/:idProducto', adminController.edit);
 
-router.put('/edit', adminController.actualizar);
+router.put('/edit/:idProducto', upload.single('imagen_product'), adminController.actualizar);
 
 router.delete('/delete/:idProducto', adminController.eliminarProducto);
 

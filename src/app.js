@@ -5,26 +5,14 @@ const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 const multer = require('multer');
 
-// Aquí es donde debes usar bodyParser
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-
 //Metodo de override para procesar put y delete
 app.use(methodOverride("_method"));
 
-// Configura multer para almacenar los archivos cargados en la carpeta /public/images
-const storage = multer.diskStorage({
-    destination: function(req, file, cb) {
-        cb(null, './public/images');
-    },
-    filename: function(req, file, cb) {
-        cb(null, Date.now() + path.extname(file.originalname)); // Agrega la fecha actual al nombre del archivo para evitar duplicados
-    }
-});
-const upload = multer({ storage: storage });
+// Middleware para analizar el cuerpo de las solicitudes POST
+app.use(express.urlencoded({ extended: false }));
 
 // Haz que multer esté disponible en toda la aplicación
-app.set('upload', upload);
+
 
 const rutaHome = require('./routes/home');
 const rutaUsers = require('./routes/users');
@@ -48,9 +36,6 @@ app.use('/users', rutaUsers);
 app.use('/descubri', rutaDescubri);
 app.use('/producto', rutaProducto);
 app.use('/admin', rutaAdmin);
-
-// Middleware para analizar el cuerpo de las solicitudes POST
-app.use(express.urlencoded({ extended: false }));
 
 // capturas del formulario de products.json
 app.post('/carga-productos', (req, res) =>{

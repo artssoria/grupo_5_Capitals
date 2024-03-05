@@ -17,17 +17,17 @@
         <div class="Principal_cont">
             <h1>Listado de productos actuales</h1>
             <div class="productos_cont">
-                <% for (let i = 0; i < listadoDeProductos.length; i++){ %>
+                <% for (let i = 0; i < products.length; i++){ %>
                     <div class="Producto_cont">
                         <div class="Nombre_cont">
-                            <h2><%= listadoDeProductos[i].nombre_product %></h2>
+                            <h2><%= products[i].nombre_product %></h2>
                         </div>
                         <div class="imagen_cont">
-                            <img src=<%=listadoDeProductos[i].imagen_product%> alt="imagen del producto">
+                            <img src=<%=products[i].imagen_product%> alt="imagen del producto">
                         </div>
                         <div class="Botones_cont">
-                            <button onclick="window.location.href='/admin/edit/<%= listadoDeProductos[i].id%>'">Modificar</button>
-                            <form action="/admin/delete/<%= listadoDeProductos[i].id%>?_method=DELETE" method="POST">
+                            <button onclick="window.location.href='/admin/edit/<%= products[i].id%>'">Modificar</button>
+                            <form action="/admin/delete/<%= products[i].id%>?_method=DELETE" method="POST">
                                 <button type="submit">Eliminar</button>
                             </form>
                         </div>
