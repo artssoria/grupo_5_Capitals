@@ -25,6 +25,16 @@
                         <div class="imagen_cont">
                             <img src=<%=products[i].imagen_product%> alt="imagen del producto">
                         </div>
+                        <div class="detalles_producto_cont">
+                            <div class="fil1">
+                                <p>Region:<%=products[i].region_product%></p>
+                                <p>Servicio:<%=products[i].servicio_product%></p>
+                            </div>
+                            <div class="fil2">
+                                <p><%=products[i].precio_product%> $ Arg</p>
+                                <p><%=products[i].hospedaje_product%></p>
+                            </div>
+                        </div>
                         <div class="Botones_cont">
                             <button onclick="window.location.href='/admin/edit/<%= products[i].id%>'">Modificar</button>
                             <form action="/admin/delete/<%= products[i].id%>?_method=DELETE" method="POST">
