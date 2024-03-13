@@ -15,17 +15,25 @@
 <body>
     <%- include('partials/headerAdmin') %>
     <main>
+        <div class="cont_errores">
+            <%  if(locals.errors) { 
+                    errors.forEach(error => { %>
+                        <p class="errorMensaje"><%= error.msg %> </p>
+            <%      }) 
+                };
+            %>
+        </div>
         <form method="POST" action="/admin/carga-productos" enctype="multipart/form-data">
             <h1>Carga de producto</h1>
             <div class="formulario">
                 <div class="bloque_simple">
                     <label for="nombre_product">Nombre del producto</label>
-                    <input type="text" id="nombre_product" name="nombre_product">
+                    <input type="text" id="nombre_product" name="nombre_product" value="<%= locals.old && old.nombre_product ? old.nombre_product : '' %>">
                 </div>
 
                 <div class="bloque_area">
                     <label for="descripcion">Descripción del producto</label>
-                    <textarea name="descripcion" id="descripcion" cols="30" rows="10"></textarea>
+                    <textarea name="descripcion" id="descripcion" cols="30" rows="10"><%= locals.old && old.descripcion ? old.descripcion : '' %></textarea>
                 </div>
 
                 <div class="bloque_simple">
@@ -37,10 +45,10 @@
                     <label for="hospedaje_product">Hospedaje</label>
                     <div class="opciones">
                         <label for="hospedaje_product">Hotel
-                            <input type="radio" name="hospedaje_product" value="Hotel">
+                            <input type="radio" name="hospedaje_product" value="Hotel" <%=locals.old && old.hospedaje_product === 'Hotel' ? 'checked' : '' %>>
                         </label>
                         <label for="hospedaje_product">Hostal
-                            <input type="radio" name="hospedaje_product" value="Hostal">
+                            <input type="radio" name="hospedaje_product" value="Hostal" <%=locals.old && old.hospedaje_product === 'Hostal' ? 'checked' : '' %>>
                         </label>
                     </div>
                 </div>
@@ -49,13 +57,13 @@
                     <label for="servicio_product">Categoría del servicio</label>
                     <div class="opciones">
                         <label for="servicio_product">Viaje de egresados
-                            <input type="radio" name="servicio_product" value="Egresados">
+                            <input type="radio" name="servicio_product" value="Egresados" <%=locals.old && old.servicio_product === 'Egresados' ? 'checked' : '' %>>
                         </label>
                         <label for="servicio_product">Familiar
-                            <input type="radio" name="servicio_product" value="Familiar">
+                            <input type="radio" name="servicio_product" value="Familiar" <%=locals.old && old.servicio_product === 'Familiar' ? 'checked' : '' %>>
                         </label>
                         <label for="servicio_product">Express
-                            <input type="radio" name="servicio_product" value="Express">
+                            <input type="radio" name="servicio_product" value="Express" <%=locals.old && old.servicio_product === 'Express' ? 'checked' : '' %>>
                         </label>
                     </div>
                 </div>
@@ -64,23 +72,23 @@
                     <label for="region_product">Categoría de la región</label>
                     <div class="opciones">
                         <label for="region_product">Yungas
-                            <input type="radio" name="region_product" value="Yungas">
+                            <input type="radio" name="region_product" value="Yungas" <%=locals.old && old.region_product === 'Yungas' ? 'checked' : '' %>>
                         </label>
                         <label for="region_product">Puna
-                            <input type="radio" name="region_product" value="Puna">
+                            <input type="radio" name="region_product" value="Puna" <%=locals.old && old.region_product === 'Puna' ? 'checked' : '' %>>
                         </label>
                         <label for="region_product">Valles
-                            <input type="radio" name="region_product" value="Valles">
+                            <input type="radio" name="region_product" value="Valles" <%=locals.old && old.region_product === 'Valles' ? 'checked' : '' %>>
                         </label>
                         <label for="region_product">Quebrada
-                            <input type="radio" name="region_product" value="Quebrada">
+                            <input type="radio" name="region_product" value="Quebrada" <%=locals.old && old.region_product === 'Quebrada' ? 'checked' : '' %>>
                         </label>
                     </div>
                 </div>
 
                 <div class="bloque_simple">
                     <label for="precio_product">Precio de producto</label>
-                    <input type="number" id="precio_product" name="precio_product">
+                    <input type="number" step="0.01" pattern="\d+(\.\d{1,2})?" id="precio_product" name="precio_product" value="<%= locals.old && old.precio_product ? old.precio_product : '' %>">
 
                 </div>
                 <div class="botones">

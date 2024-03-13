@@ -15,6 +15,14 @@
 <body>
     <%- include('partials/headerAdmin') %>
     <main>
+        <div class="cont_errores">
+            <%  if(locals.errors) { 
+                    errors.forEach(error => { %>
+                        <p class="errorMensaje"><%= error.msg %> </p>
+            <%      }) 
+                };
+            %>
+        </div>
         <form method="POST" action="/admin/edit/<%=idFound.id%>?_method=PUT" enctype="multipart/form-data">
             <h1>Modificar producto <%= idFound.id%></h1>
             <div class="formulario">
@@ -81,7 +89,7 @@
 
                 <div class="bloque_simple">
                     <label for="precio_product">Precio de producto</label>
-                    <input type="number" id="precio_product" name="precio_product" value="<%=idFound.precio_product%>">
+                    <input type="number" step="0.01" pattern="\d+(\.\d{1,2})?" id="precio_product" name="precio_product" value="<%=idFound.precio_product%>">
 
                 </div>
                 <div class="botones">

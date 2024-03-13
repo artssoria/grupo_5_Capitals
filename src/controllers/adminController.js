@@ -2,6 +2,7 @@ const path = require('path');
 const fs = require('fs');
 const filePath = path.join(__dirname, '../data/products.json');
 const crypto = require('crypto');
+const { validationResult } = require('express-validator');
 
 let products = require('../data/products.json');
 
@@ -11,17 +12,26 @@ const adminController = {
     },
 
     subir: (req,res) =>{
-        let newProduct = req.body;
+        let errors = validationResult(req);
+        if (errors.isEmpty()) {
+            let newProduct = req.body;
 
-        newProduct.id = parseInt(`${products.length + 1}`);
+            newProduct.id = parseInt(`${products.length + 1}`);
 
-        newProduct.imagen_product = "/images/" + req.file?.filename || "default-image.png";
+            if(req.file){
+                newProduct.imagen_product = "/images/" + req.file?.filename || "default-image.png";
+            } else {
+                newProduct.imagen_product = "/images/defecto.png";
+            };
 
-        products.push(newProduct);
+            products.push(newProduct);
 
-        fs.writeFileSync( filePath, JSON.stringify(products, null, 4));
+            fs.writeFileSync( filePath, JSON.stringify(products, null, 4));
 
-        res.redirect('/admin/modif-producto');
+            res.redirect('/admin/modif-producto');
+        } else {
+            res.render('carga-productos', {errors: errors.array(), old:req.body});
+        }
     },
 
     listado: (req,res) => {

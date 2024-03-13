@@ -13,7 +13,6 @@ app.use(express.urlencoded({ extended: false }));
 
 // Haz que multer esté disponible en toda la aplicación
 
-
 const rutaHome = require('./routes/home');
 const rutaUsers = require('./routes/users');
 const rutaDescubri = require('./routes/descubri');
