@@ -16,7 +16,7 @@ const storage = multer.diskStorage({
     }
 });
 
-//Validaciones del forrmulario de carga producto (agregar un nuevo producto a JSON)
+//Validaciones del formulario de carga producto (agregar un nuevo producto a JSON)
 let validacionFormProduct = [
     body('nombre_product').notEmpty().withMessage('Debes agregar el nombre del producto'),
     body('descripcion').notEmpty().withMessage('Debes agregar alguna descripcion'),

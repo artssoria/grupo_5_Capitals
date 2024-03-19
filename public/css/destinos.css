@@ -11,6 +11,24 @@ body {
     
 }
 
+.contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh; /* Ajusta esto según tus necesidades */
+  }
+  
+  .imagen {
+    width: 100vh;
+    height: 250px;
+
+  }
+  
+  .contenedor p {
+    font-size: 1.5em; /* Ajusta esto según tus necesidades */
+  }
+  
 h1 {
     color: #000000;
     text-align: center;

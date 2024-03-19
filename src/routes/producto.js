@@ -20,7 +20,7 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage: storage });
 
-router.get('/carrito', carritoController.carrito);
+ router.get('/carrito', carritoController.carrito);
 
 router.get('/listado-productos', (req, res) => {
     fs.readFile(path.join(__dirname, '../data/products.json'), 'utf8', (err, data) => {
@@ -33,7 +33,7 @@ router.get('/listado-productos', (req, res) => {
         res.render('productos', { productos });
     });
 });
-
+/*
 router.get('/carga-productos', (req, res) => {
     res.render('carga-productos');
 });
@@ -78,6 +78,6 @@ router.post('/carga-productos', upload.single('imagen_product'), (req, res) => {
             res.render('productos', { productos });
         });
     });
-});
+}); */
 
 module.exports = router;

@@ -16,7 +16,7 @@
         "imagen_product": "/images/1709362291205.png",
         "servicio_product": "Familiar",
         "region_product": "Valles",
-        "precio_product": "30000",
+        "precio_product": "40000",
         "hospedaje_product": "Hostal"
     },
     {
@@ -38,5 +38,15 @@
         "region_product": "Yungas",
         "precio_product": "60000",
         "hospedaje_product": "Hostal"
+    },
+    {
+        "nombre_product": "Viaje de fantasia",
+        "descripcion": "viaje por viajar",
+        "hospedaje_product": "Hotel",
+        "servicio_product": "Egresados",
+        "region_product": "Yungas",
+        "precio_product": "400000",
+        "id": 5,
+        "imagen_product": "/images/imagen-1710883720663.jpg"
     }
 ]
