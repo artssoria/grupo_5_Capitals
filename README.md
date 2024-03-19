@@ -22,7 +22,11 @@ Para carga de producto `http://localhost:3000/admin/carga-producto`
 
 Visualizar el panel `http://localhost:3000/admin/panel`
 
+### Tablero de tareas: 
+https://trello.com/b/0pVEvQqK/dh-5-capitals
 
+### Retrospectiva: 
+https://trello.com/b/HVjb5WMC/retro-1-2-3
 
 ## TravelXJujuy
 Puedes ver nuestro boceto en https://wireframe.cc/6kdyTv
