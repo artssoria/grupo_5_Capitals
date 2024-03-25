@@ -6,6 +6,9 @@ const multer = require('multer');
 const carritoController = require('../controllers/carritoController');
 const productosController = require('../controllers/productosController');
 
+router.get('/listado-productos', productosController.listado);
+router.post('/carga-producto', productosController.cargaProducto);
+
 let productosCompletos = [];
 let idCounter = 1; // Inicia el contador de ID
 

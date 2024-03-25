@@ -560,6 +560,11 @@ footer{
 	.Botones_nav > ul > li > a{
 		font-size: 13px;
 	}
+	
+    .Botones_nav > ul > li > .descubri{
+        margin: -60px;
+    }
+	
 
 	.Botones_nav > ul > li > i{
 		font-size: 13px;
