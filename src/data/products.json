@@ -38,15 +38,5 @@
         "region_product": "Yungas",
         "precio_product": "60000",
         "hospedaje_product": "Hostal"
-    },
-    {
-        "nombre_product": "Viaje de fantasia",
-        "descripcion": "viaje por viajar",
-        "hospedaje_product": "Hotel",
-        "servicio_product": "Egresados",
-        "region_product": "Yungas",
-        "precio_product": "400000",
-        "id": 5,
-        "imagen_product": "/images/imagen-1710883720663.jpg"
     }
 ]

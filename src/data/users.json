@@ -1,46 +1,24 @@
 [
   {
     "id": 1,
-    "Nombre": "arturo",
-    "Apellido": "soria",
-    "Email": "arts.soria9@gmail.com",
-    "Contraseña": "123456789",
-    "Telefono": "323232323",
+    "Nombre": "admin",
+    "Apellido": "admin",
+    "Email": "admin@admin.com",
+    "Contraseña": "admin",
+    "Telefono": "232323232",
     "Nacionalidad": "argentino",
     "Provincia": "jujuy",
     "tipoUsuario": "admin"
   },
   {
     "id": 2,
-    "Nombre": "nata",
-    "Apellido": "nanell",
-    "Email": "serom938@gmail.com",
-    "Contraseña": "123456789",
-    "Telefono": "34343434",
+    "Nombre": "user",
+    "Apellido": "user",
+    "Email": "user@user.com",
+    "Contraseña": "user",
+    "Telefono": "32323232",
     "Nacionalidad": "argentino",
     "Provincia": "jujuy",
     "tipoUsuario": "user"
-  },
-  {
-    "id": 3,
-    "Nombre": "carlos",
-    "Apellido": "yanki",
-    "Email": "carlos.hopp@gmail.com",
-    "Contraseña": "12345ars",
-    "Telefono": "323232",
-    "Nacionalidad": "argentino",
-    "Provincia": "jujuy",
-    "tipoUsuario": "user"
-  },
-  {
-    "id": 4,
-    "Nombre": "Tomate",
-    "Apellido": "colorao",
-    "Email": "tomate.colorao@gmail.com",
-    "Contraseña": "2024ars",
-    "Telefono": "2323232",
-    "Nacionalidad": "argentino",
-    "Provincia": "jujuy",
-    "tipoUsuario": "admin"
   }
 ]
