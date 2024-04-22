@@ -4,6 +4,10 @@ var path = require('path');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 const multer = require('multer');
+let session = require('express-session');
+
+//Metodo de session para sesiones de usuario
+app.use(session({secret: "Shh, es un secreto!"}));
 
 //Metodo de override para procesar put y delete
 app.use(methodOverride("_method"));
