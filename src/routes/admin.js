@@ -30,7 +30,7 @@ const upload = multer({storage});
 
 router.get('/carga-producto', adminController.carga);
 
-router.post('/carga-productos', upload.single('imagen_product'), validacionFormProduct, adminController.subir);
+router.post('/carga-producto', upload.single('imagen_product'), validacionFormProduct, adminController.createProduct);
 
 router.get('/modif-producto', adminController.listado);
 

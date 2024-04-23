@@ -31,7 +31,7 @@ module.exports = (sequelize, DataTypes) => {
             unique: false
         },
         regions_id: {
-            types: DataTypes.INTEGER,
+            type: DataTypes.INTEGER,
             unique: false
         }
     };
@@ -39,9 +39,39 @@ module.exports = (sequelize, DataTypes) => {
     let config = {
         timestamps: false,
         tableName: "products"
-    }
+    };
 
     const Product = sequelize.define("Product", cols, config);
+
+    Product.associate = function (models) {
+        Product.belongsTo(models.Regions, {
+            foreignKey: 'regions_id',
+            as: 'regions'
+        })
+
+        Product.belongsTo(models.Lodgings, {
+            foreignKey: 'lodgings_id',
+            as: 'lodgings'
+        })
+        
+        Product.belongsTo(models.Services, {
+            foreignKey: 'services_id',
+            as: 'services'
+        })
+
+        Product.hasMany(models.Comentaries, {
+            foreignKey: 'products_id',
+            as: 'comentaries'
+        })
+
+        Product.belongsToMany(models.Carts, {
+            as: 'carts',
+            through: 'products_carts',
+            foreignKey: 'products_id',
+            otherKey: 'carts_id',
+            timestamps: false
+        })
+    }
 
     return Product;
 }

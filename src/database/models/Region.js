@@ -22,5 +22,14 @@ module.exports = (sequelize, DataTypes) => {
 
     const Region = sequelize.define("Region", cols, config);
 
+    Region.associate = function(models){
+        Region.hasMany(models.Products,{
+            foreignKey: 'regions_id',
+            as: 'products'
+        })
+    }
+
+
+
     return Region;
 }

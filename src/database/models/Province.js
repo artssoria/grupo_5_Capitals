@@ -27,7 +27,12 @@ module.exports = (sequelize, DataTypes) => {
         Province.belongsTo(models.Nationalities, {
             as: "nationalitie",
             foreignKey: "nationalities_id"
-        });
+        })
+
+        Province.hasMany(models.Users, {
+            foreignKey: 'provinces_id',
+            as: 'users'
+        })
     };
 
     return Province;

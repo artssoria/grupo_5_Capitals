@@ -3,12 +3,84 @@ const fs = require('fs');
 const filePath = path.join(__dirname, '../data/products.json');
 const crypto = require('crypto');
 const { validationResult } = require('express-validator');
+let db = require("../database/models");
 
 let products = require('../data/products.json');
 
 const adminController = {
     carga: (req,res) =>{
         res.render('carga-productos')
+    },
+
+    createProduct: (req,res) =>{
+        let errors = validationResult(req);
+        if (errors.isEmpty()) {
+            let image = req.body.imagen_product;
+
+            if(req.file){
+                image = "/images/" + req.file?.filename || "default-image.png";
+            } else {
+                image = "/images/defecto.png";
+            };
+
+            let lod;
+            let serv;
+            let reg;
+
+            switch(req.body.hospedaje_product){
+                case "Hotel":
+                    lod = 1;
+                    break;
+                case "Hostal":
+                    lod = 2;
+                    break
+                default:
+                    lod = "null";
+            }
+
+            switch(req.body.servicio_product){
+                case "Egresados":
+                    serv = 1;
+                    break;
+                case "Familiar":
+                    serv = 2;
+                    break
+                case "Express":
+                    serv = 3;
+                default:
+                    serv = "null";
+            }
+
+            switch(req.body.region_product){
+                case "Valles":
+                    reg = 1;
+                    break;
+                case "Quebrada":
+                    reg = 2;
+                    break
+                case "Puna":
+                    reg = 3;
+                case "Yungas":
+                    reg = 4
+                default:
+                    reg = "null";
+            }
+
+            db.Products.create({
+                name: req.body.nombre_product,
+                description: req.body.descripcion,
+                img: image,
+                price: req.body.precio_product,
+                lodgings_id: lod,
+                services_id: serv,
+                regions_id: reg
+            });
+
+            res.redirect('/admin/modif-producto');
+        } else {
+            res.render('carga-productos', {errors: errors.array(), old:req.body});
+        }
+
     },
 
     subir: (req,res) =>{
