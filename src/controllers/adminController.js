@@ -80,9 +80,6 @@ const adminController = {
                 console.error("Error al crear el producto:", error);
                 res.status(500).send("Error interno del servidor");
             });
-        
-
-            res.redirect('/admin/modif-producto');
         } else {
             res.render('carga-productos', {errors: errors.array(), old:req.body});
         }
@@ -143,41 +140,136 @@ const adminController = {
     //     res.render("productEdit", {idFound});
     // },
 
-    actualizar: (req,res)=>{
-        let idToUpdate = +req.params.idProducto;
-        const {nombre_product, descripcion, servicio_product, region_product, precio_product, hospedaje_product}= req.body;
-        let idEncontrar = products.find(e => e.id == idToUpdate);
-        let rutaOriginalImagen = idEncontrar.imagen_product;
+    updateProduct: (req,res) => {
+        let errors = validationResult(req);
+        if (errors.isEmpty()) {
+            let image;
+            db.Product.findByPk(req.params.idProducto)
+                .then(product => {
+                    if (product) {
+                        if(req.file){
+                            image = "/images/" + req.file?.filename || "default-img.png";
+                        } else {
+                            if (product.img){
+                                image = product.img;
+                            } else {
+                                image = "/images/defecto.png";
+                            }
+                        };
+                    }
+                });
 
-        products.forEach(e => {
-            if (e.id == idToUpdate){
-                if(req.file){
-                    e.nombre_product = nombre_product;
-                    e.descripcion = descripcion;
-                    e.imagen_product = '/images/' + req.file?.filename || 'default.png';
-                    e.servicio_product = servicio_product;
-                    e.region_product = region_product;
-                    e.precio_product = precio_product;
-                    e.hospedaje_product = hospedaje_product;
-                }else{
-                    e.nombre_product = nombre_product;
-                    e.descripcion = descripcion;
-                    e.imagen_product = rutaOriginalImagen;
-                    e.servicio_product = servicio_product;
-                    e.region_product = region_product;
-                    e.precio_product = precio_product;
-                    e.hospedaje_product = hospedaje_product;
-                }
-            };
-        });
-        fs.writeFileSync(
-            filePath,
-            JSON.stringify(products, null ,4),
-            {
-                encoding: "utf-8"
+
+            let lod;
+            let serv;
+            let reg;
+
+            switch(req.body.hospedaje_product){
+                case "Hotel":
+                    lod = 1;
+                    break;
+                case "Hostal":
+                    lod = 2;
+                    break
+                default:
+                    lod = "null";
             }
-        );
-        res.redirect('/admin/modif-producto');
+
+            switch(req.body.servicio_product){
+                case "Egresados":
+                    serv = 1;
+                    break;
+                case "Familiar":
+                    serv = 2;
+                    break
+                case "Express":
+                    serv = 3;
+                default:
+                    serv = "null";
+            }
+
+            switch(req.body.region_product){
+                case "Valles":
+                    reg = 1;
+                    break;
+                case "Quebrada":
+                    reg = 2;
+                    break
+                case "Puna":
+                    reg = 3;
+                case "Yungas":
+                    reg = 4
+            }
+
+            db.Product.update({
+                name: req.body.nombre_product,
+                description: req.body.descripcion,
+                img: image,
+                price: req.body.precio_product,
+                lodgings_id: lod,
+                services_id: serv,
+                regions_id: reg
+            }, {
+                where: {
+                    id: req.params.idProducto
+                }
+            })
+            .then(() => {
+                res.redirect('/admin/modif-producto');
+            }).catch(error => {
+                console.error("Error al crear el producto:", error);
+                res.status(500).send("Error interno del servidor");
+            });
+        } else {
+            res.render('productEdit', {errors: errors.array(), old:req.body});
+        }
+    },
+
+    // actualizar: (req,res)=>{
+    //     let idToUpdate = +req.params.idProducto;
+    //     const {nombre_product, descripcion, servicio_product, region_product, precio_product, hospedaje_product}= req.body;
+    //     let idEncontrar = products.find(e => e.id == idToUpdate);
+    //     let rutaOriginalImagen = idEncontrar.imagen_product;
+
+    //     products.forEach(e => {
+    //         if (e.id == idToUpdate){
+    //             if(req.file){
+    //                 e.nombre_product = nombre_product;
+    //                 e.descripcion = descripcion;
+    //                 e.imagen_product = '/images/' + req.file?.filename || 'default.png';
+    //                 e.servicio_product = servicio_product;
+    //                 e.region_product = region_product;
+    //                 e.precio_product = precio_product;
+    //                 e.hospedaje_product = hospedaje_product;
+    //             }else{
+    //                 e.nombre_product = nombre_product;
+    //                 e.descripcion = descripcion;
+    //                 e.imagen_product = rutaOriginalImagen;
+    //                 e.servicio_product = servicio_product;
+    //                 e.region_product = region_product;
+    //                 e.precio_product = precio_product;
+    //                 e.hospedaje_product = hospedaje_product;
+    //             }
+    //         };
+    //     });
+    //     fs.writeFileSync(
+    //         filePath,
+    //         JSON.stringify(products, null ,4),
+    //         {
+    //             encoding: "utf-8"
+    //         }
+    //     );
+    //     res.redirect('/admin/modif-producto');
+    // },
+
+    destroyProduct: (req,res) => {
+        db.Product.destroy({
+            where: {
+                id: req.params.idProducto
+            }
+        }).then(()=>{
+            res.redirect('/admin/modif-producto')
+        })
     },
 
     eliminarProducto: (req,res) =>{

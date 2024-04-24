@@ -28,8 +28,8 @@ router.get('/panel', adminController.renderPanel);
 
 router.get('/edit/:idProducto', adminController.renderFormUpdateProduct);
 
-router.put('/edit/:idProducto', upload.single('imagen_product'), middleValidationForm, adminController.actualizar);
+router.post('/edit/:idProducto', upload.single('imagen_product'), middleValidationForm, adminController.updateProduct);
 
-router.delete('/delete/:idProducto', adminController.eliminarProducto);
+router.delete('/delete/:idProducto', adminController.destroyProduct);
 
 module.exports = router;
