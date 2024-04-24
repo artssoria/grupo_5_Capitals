@@ -23,33 +23,33 @@
                 };
             %>
         </div>
-        <form method="POST" action="/admin/edit/<%=idFound.id%>?_method=PUT" enctype="multipart/form-data">
-            <h1>Modificar producto <%= idFound.id%></h1>
+        <form method="POST" action="/admin/edit/<%=product.id%>?_method=PUT" enctype="multipart/form-data">
+            <h1>Modificar producto <%= product.id%></h1>
             <div class="formulario">
                 <div class="bloque_simple">
                     <label for="nombre_product">Nombre del producto</label>
-                    <input type="text" id="nombre_product" name="nombre_product" value="<%=idFound.nombre_product%>">
+                    <input type="text" id="nombre_product" name="nombre_product" value="<%=product.name%>">
                 </div>
 
                 <div class="bloque_area">
                     <label for="descripcion">Descripción del producto</label>
-                    <textarea name="descripcion" id="descrip" cols="30" rows="10"><%=idFound.descripcion%></textarea>
+                    <textarea name="descripcion" id="descrip" cols="30" rows="10"><%=product.description%></textarea>
                 </div>
 
                 <div class="bloque_simple">
                     <label for="imagen_product">Subir imagen</label>
-                    <p style="color:white"><%= idFound.imagen_product %></p>
-                    <input type="file" name="imagen_product" value="<%= idFound.imagen_product %>">
+                    <p style="color:white"><%= product.img %></p>
+                    <input type="file" name="imagen_product" value="<%= product.img %>">
                 </div>
 
                 <div class="opcion">
                     <label for="hospedaje_product">Hospedaje</label>
                     <div class="opciones">
                         <label for="hospedaje_product">Hotel
-                            <input type="radio" name="hospedaje_product" value="Hotel" <%= idFound.hospedaje_product === 'Hotel' ? 'checked' : '' %>>
+                            <input type="radio" name="hospedaje_product" value="Hotel" <%= product.lodgings.name === 'Hotel' ? 'checked' : '' %>>
                         </label>
                         <label for="hospedaje_product">Hostal
-                            <input type="radio" name="hospedaje_product" value="Hostal" <%= idFound.hospedaje_product === 'Hostal' ? 'checked' : '' %>>
+                            <input type="radio" name="hospedaje_product" value="Hostal" <%= product.lodgings.name === 'Hostal' ? 'checked' : '' %>>
                         </label>
                     </div>
                 </div>
@@ -58,13 +58,13 @@
                     <label for="servicio_product">Categoría del servicio</label>
                     <div class="opciones">
                         <label for="servicio_product">Viaje de egresados
-                            <input type="radio" name="servicio_product" value="Egresados" <%= idFound.servicio_product === 'Egresados' ? 'checked' : '' %>>
+                            <input type="radio" name="servicio_product" value="Egresados" <%= product.services.name === 'Egresados' ? 'checked' : '' %>>
                         </label>
                         <label for="servicio_product">Familiar
-                            <input type="radio" name="servicio_product" value="Familiar" <%= idFound.servicio_product === 'Familiar' ? 'checked' : '' %>>
+                            <input type="radio" name="servicio_product" value="Familiar" <%= product.services.name === 'Familiar' ? 'checked' : '' %>>
                         </label>
                         <label for="servicio_product">Express
-                            <input type="radio" name="servicio_product" value="Express" <%= idFound.servicio_product === 'Express' ? 'checked' : '' %>>
+                            <input type="radio" name="servicio_product" value="Express" <%= product.services.name === 'Express' ? 'checked' : '' %>>
                         </label>
                     </div>
                 </div>
@@ -73,23 +73,23 @@
                     <label for="region_product">Categoría de la región</label>
                     <div class="opciones">
                         <label for="region_product">Yungas
-                            <input type="radio" name="region_product" value="Yungas" <%= idFound.region_product === 'Yungas' ? 'checked' : '' %>>
+                            <input type="radio" name="region_product" value="Yungas" <%= product.regions.name === 'Yungas' ? 'checked' : '' %>>
                         </label>
                         <label for="region_product">Puna
-                            <input type="radio" name="region_product" value="Puna" <%= idFound.region_product === 'Puna' ? 'checked' : '' %>>
+                            <input type="radio" name="region_product" value="Puna" <%= product.regions.name === 'Puna' ? 'checked' : '' %>>
                         </label>
                         <label for="region_product">Valles
-                            <input type="radio" name="region_product" value="Valles" <%= idFound.region_product === 'Valles' ? 'checked' : '' %>>
+                            <input type="radio" name="region_product" value="Valles" <%= product.regions.name === 'Valles' ? 'checked' : '' %>>
                         </label>
                         <label for="region_product">Quebrada
-                            <input type="radio" name="region_product" value="Quebrada" <%= idFound.region_product === 'Quebrada' ? 'checked' : '' %>>
+                            <input type="radio" name="region_product" value="Quebrada" <%= product.regions.name === 'Quebrada' ? 'checked' : '' %>>
                         </label>
                     </div>
                 </div>
 
                 <div class="bloque_simple">
                     <label for="precio_product">Precio de producto</label>
-                    <input type="number" step="0.01" pattern="\d+(\.\d{1,2})?" id="precio_product" name="precio_product" value="<%=idFound.precio_product%>">
+                    <input type="number" step="0.01" pattern="\d+(\.\d{1,2})?" id="precio_product" name="precio_product" value="<%=product.price%>">
 
                 </div>
                 <div class="botones">

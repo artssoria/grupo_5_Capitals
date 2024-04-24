@@ -5,6 +5,7 @@ let productosCompletos = [];
 
 const productosController = {
     listado: (req, res) => {
+        //usar el modelo de sequelize en vez del json
         fs.readFile(path.join(__dirname, '../data/products.json'), 'utf8', (err, data) => {
             if (err) {
                 console.error(err);
@@ -15,6 +16,8 @@ const productosController = {
             res.render('productos', { productos });
         });
     },
+
+    // esta función no va, es de adminController
     cargaProducto: (req, res) => {
         const upload = req.app.get('upload');
         upload.single('imagen_product')(req, res, (err) => {

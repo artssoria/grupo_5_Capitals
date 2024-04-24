@@ -5,10 +5,11 @@ const crypto = require('crypto');
 const { validationResult } = require('express-validator');
 let db = require("../database/models");
 
-let products = require('../data/products.json');
+
+// let products = require('../data/products.json');
 
 const adminController = {
-    carga: (req,res) =>{
+    renderFormCreateProduct: (req,res) =>{
         res.render('carga-productos')
     },
 
@@ -62,11 +63,9 @@ const adminController = {
                     reg = 3;
                 case "Yungas":
                     reg = 4
-                default:
-                    reg = "null";
             }
 
-            db.Products.create({
+            db.Product.create({
                 name: req.body.nombre_product,
                 description: req.body.descripcion,
                 img: image,
@@ -74,7 +73,14 @@ const adminController = {
                 lodgings_id: lod,
                 services_id: serv,
                 regions_id: reg
+            })
+            .then(() => {
+                res.redirect('/admin/modif-producto');
+            }).catch(error => {
+                console.error("Error al crear el producto:", error);
+                res.status(500).send("Error interno del servidor");
             });
+        
 
             res.redirect('/admin/modif-producto');
         } else {
@@ -83,42 +89,59 @@ const adminController = {
 
     },
 
-    subir: (req,res) =>{
-        let errors = validationResult(req);
-        if (errors.isEmpty()) {
-            let newProduct = req.body;
+    // subir: (req,res) =>{
+    //     let errors = validationResult(req);
+    //     if (errors.isEmpty()) {
+    //         let newProduct = req.body;
 
-            newProduct.id = parseInt(`${products.length + 1}`);
+    //         newProduct.id = parseInt(`${products.length + 1}`);
 
-            if(req.file){
-                newProduct.imagen_product = "/images/" + req.file?.filename || "default-image.png";
-            } else {
-                newProduct.imagen_product = "/images/defecto.png";
-            };
+    //         if(req.file){
+    //             newProduct.imagen_product = "/images/" + req.file?.filename || "default-image.png";
+    //         } else {
+    //             newProduct.imagen_product = "/images/defecto.png";
+    //         };
 
-            products.push(newProduct);
+    //         products.push(newProduct);
 
-            fs.writeFileSync( filePath, JSON.stringify(products, null, 4));
+    //         fs.writeFileSync( filePath, JSON.stringify(products, null, 4));
 
-            res.redirect('/admin/modif-producto');
-        } else {
-            res.render('carga-productos', {errors: errors.array(), old:req.body});
-        }
+    //         res.redirect('/admin/modif-producto');
+    //     } else {
+    //         res.render('carga-productos', {errors: errors.array(), old:req.body});
+    //     }
+    // },
+
+    // listado: (req,res) => {
+    //     res.render('modif-productos', {products});
+    // },
+
+    listProducts: (req,res) => {
+        db.Product.findAll({
+            include: [{association: "regions"}, {association: "services"}, {association: "lodgings"}]
+        })
+            .then(function(products) {
+                res.render("modif-productos", {products})
+            })
     },
 
-    listado: (req,res) => {
-        res.render('modif-productos', {products});
-    },
-
-    panel: (req,res) => {
+    renderPanel: (req,res) => {
         res.render('panel');
     },
 
-    edit: (req,res) =>{
-        let idToEdit = +req.params.idProducto;
-        let idFound = products.find(e => e.id == idToEdit)
-        res.render("productEdit", {idFound});
+    renderFormUpdateProduct: (req,res) => {
+        db.Product.findByPk(req.params.idProducto, {include: 
+        [{association: "regions"}, {association: "services"}, {association: "lodgings"}]})
+            .then(function(product){
+                res.render("productEdit", {product: product})
+            })
     },
+
+    // edit: (req,res) =>{
+    //     let idToEdit = +req.params.idProducto;
+    //     let idFound = products.find(e => e.id == idToEdit)
+    //     res.render("productEdit", {idFound});
+    // },
 
     actualizar: (req,res)=>{
         let idToUpdate = +req.params.idProducto;

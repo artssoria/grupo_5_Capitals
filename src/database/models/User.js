@@ -1,3 +1,4 @@
+
 module.exports = (sequelize, DataTypes) => {
     let cols = {
         id: {
@@ -52,27 +53,27 @@ module.exports = (sequelize, DataTypes) => {
     const User = sequelize.define("User", cols, config);
 
     User.associate = function(models) {
-        User.belongsTo(models.Roles, {
+        User.belongsTo(models.Role, {
             foreignKey: 'roles_id',
             as: 'roles'
         })
 
-        User.belongsTo(models.Nationalities, {
+        User.belongsTo(models.Nationalitie, {
             foreignKey: 'nationalities_id',
             as: 'nationalities'
         })
         
-        User.belongsTo(models.Provinces, {
+        User.belongsTo(models.Province, {
             foreignKey: 'provinces_id',
             as: 'provinces'
         })
 
-        User.hasMany(models.Comentaries, {
+        User.hasMany(models.Comentarie, {
             foreignKey: 'users_id',
             as: 'comentaries'
         })
 
-        User.hasMany(models.Carts,{
+        User.hasMany(models.Cart,{
             foreignKey: 'users_id',
             as: 'carts'
         })
