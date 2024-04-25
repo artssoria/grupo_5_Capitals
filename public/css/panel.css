@@ -3,14 +3,14 @@ main{
     max-width: 600px;
     display: flex;
     flex-direction: column;
-    height: 700px;
+    height: 900px;
     margin: 20px auto;
     align-items: flex-start;
-    justify-content: flex-start;
+    justify-content: space-between;
 }
 
 .cont{
-    height: 60%;
+    height: 50%;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -27,6 +27,7 @@ main{
 
 .PanelControl{
     flex:90%;
+    width: 80%;
     background-color: #36173d;
     padding: 20px;
     display: flex;
@@ -76,5 +77,55 @@ main{
     flex-direction: column;
     justify-content: space-around;
     
+}
+
+.cont2{
+    height: 50%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.cont2 > h1{
+    color:white;
+    flex: 10%;
+}
+
+.PanelControl2{
+    flex:90%;
+    width: 80%;
+    background-color: #36173d;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border: none;
+    border-radius: 20px;
+}
+
+.PanelControl2 h2{
+    color:white;
+    text-align: center;
+}
+
+.PanelControl2 a{
+    background-color: #ff4845;
+    color:white;
+    text-decoration: none;
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 20px;
+    transition: all 150ms;
+}
+
+.PanelControl2 a:hover{
+    background-color: #ffc55f;
 }
 

@@ -18,18 +18,27 @@ const storage = multer.diskStorage({
 
 const upload = multer({storage});
 
+//Panel de Admin
+
+router.get('/panel', adminController.renderPanel);
+
+//Administrar productos
+
 router.get('/carga-producto', adminController.renderFormCreateProduct);
 
 router.post('/carga-producto', upload.single('imagen_product'), middleValidationForm, adminController.createProduct);
 
 router.get('/modif-producto', adminController.listProducts);
 
-router.get('/panel', adminController.renderPanel);
-
 router.get('/edit/:idProducto', adminController.renderFormUpdateProduct);
 
 router.post('/edit/:idProducto', upload.single('imagen_product'), middleValidationForm, adminController.updateProduct);
 
 router.delete('/delete/:idProducto', adminController.destroyProduct);
+
+//Administrar usuarios
+
+router.get('/listUsers', adminController.RenderListUsers);
+
 
 module.exports = router;

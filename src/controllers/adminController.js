@@ -144,21 +144,15 @@ const adminController = {
         let errors = validationResult(req);
         if (errors.isEmpty()) {
             let image;
-            db.Product.findByPk(req.params.idProducto)
-                .then(product => {
-                    if (product) {
-                        if(req.file){
-                            image = "/images/" + req.file?.filename || "default-img.png";
-                        } else {
-                            if (product.img){
-                                image = product.img;
-                            } else {
-                                image = "/images/defecto.png";
-                            }
-                        };
-                    }
-                });
 
+            if(req.file) {
+                image = "/images/" + req.file?.filename || "default-img.png";
+            }else {
+                db.Product.findByPk(req.params.idProducto)
+                    .then(product => {
+                        image = product.img;
+                    })
+            }
 
             let lod;
             let serv;
@@ -272,18 +266,22 @@ const adminController = {
         })
     },
 
-    eliminarProducto: (req,res) =>{
-        let idToDelete = +req.params.idProducto;
-        products = products.filter(e => e.id != idToDelete);
+    // eliminarProducto: (req,res) =>{
+    //     let idToDelete = +req.params.idProducto;
+    //     products = products.filter(e => e.id != idToDelete);
 
-        fs.writeFileSync(
-            filePath,
-            JSON.stringify(products, null, 4),
-            {
-                encoding:"utf-8"
-            }
-        );
-        res.redirect('/admin/modif-producto');
+    //     fs.writeFileSync(
+    //         filePath,
+    //         JSON.stringify(products, null, 4),
+    //         {
+    //             encoding:"utf-8"
+    //         }
+    //     );
+    //     res.redirect('/admin/modif-producto');
+    // }
+
+    RenderListUsers: (req,res) => {
+        res.render('listUsers')
     }
 };
 

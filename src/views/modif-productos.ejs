@@ -16,13 +16,15 @@
     <main>
         <div class="Principal_cont">
             <h1>Listado de productos actuales</h1>
-            <div class="productos_cont">
+            <div class="productos_cont" tabindex="1">
                 <% for (let i = 0; i < products.length; i++){ %>
+                    
                     <div class="Producto_cont">
                         <div class="Nombre_cont">
                             <h2><%= products[i].name %></h2>
                         </div>
                         <div class="imagen_cont">
+                            <p><%=products[i].description%></p>
                             <img src=<%=products[i].img%> alt="imagen del producto">
                         </div>
                         <div class="detalles_producto_cont">
