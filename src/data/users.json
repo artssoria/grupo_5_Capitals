@@ -20,5 +20,16 @@
     "Nacionalidad": "argentino",
     "Provincia": "jujuy",
     "tipoUsuario": "user"
+  },
+  {
+    "id": 3,
+    "Nombre": "a",
+    "Apellido": "s",
+    "Email": "3@gt",
+    "Contraseña": "d",
+    "Telefono": "rr",
+    "Nacionalidad": "1",
+    "Provincia": "1",
+    "tipoUsuario": "user"
   }
 ]

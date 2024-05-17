@@ -368,7 +368,12 @@ footer{
 
 .bloque1 ul li{
 	list-style: none;
+	color:white;
 	transition: all 150ms;
+}
+
+.bloque1 ul a {
+	text-decoration: none;
 }
 
 .bloque2{
@@ -750,6 +755,11 @@ footer{
 	.bloque2 ul li{
 		list-style: none;
 		transition: all 150ms;
+	}
+
+	.bloque2 ul a{
+		text-decoration: none;
+		color: white;
 	}
 
 	.bloque3{

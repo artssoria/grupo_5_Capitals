@@ -14,11 +14,30 @@
 <body>
     <%- include('partials/headerAdmin') %>
     <main>
-        <div class="cont-user">
-            <div>
-                
-            </div>
+        <h2>Lista de Usuarios</h2>
+        <div class="cont_gral">
+            <% for (let i = 0; i < users.length; i++){ %>
+                <div class="cont_user">
+                    <div class="user_img">
+                        <img src="<%=users[i].profile_img%>" alt="imagen de <%=users[i].first_name%>">
+                    </div>
+                    <div class="secc_user_gral">
+                        <div class="user_name">
+                            <h3><%=users[i].first_name + " " + users[i].last_name%></h3>
+                        </div>
+                        <div class="user_nat">
+                            <p>Nacionalidad: <%=users[i].nationalities.name%> </p>
+                        </div>
+                        <div class="user_role">
+                            <p>Rol: <%=users[i].roles.name%></p>
+                        </div>
+                    </div>
+                </div>
+          <%}%>
+
+
         </div>
+
     </main>
     <%- include('partials/footer') %>
 </body>

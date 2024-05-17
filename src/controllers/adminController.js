@@ -65,6 +65,7 @@ const adminController = {
                     reg = 4
             }
 
+            
             db.Product.create({
                 name: req.body.nombre_product,
                 description: req.body.descripcion,
@@ -281,8 +282,13 @@ const adminController = {
     // }
 
     RenderListUsers: (req,res) => {
-        res.render('listUsers')
-    }
+        db.User.findAll({
+            include: [{association: "nationalities"}, {association: "roles"}]
+        })
+        .then(function(users){
+            res.render('listUsers', {users})
+        })
+    },
 };
 
 module.exports = adminController;

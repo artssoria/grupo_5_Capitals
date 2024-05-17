@@ -1,6 +1,9 @@
 const fs = require('fs');
 const path = require('path');
 const { verificarCredenciales } = require('../auth/auth');
+let db = require("../database/models");
+const { validationResult } = require('express-validator');
+const bcryptjs = require('bcryptjs');
 
 const usersFilePath = path.join(__dirname, '../data/users.json');
 
@@ -24,13 +27,65 @@ const userControllers = {
         res.render('login', { error });
     },
 
-    register: (req, res) => {
-        res.render('register');
+    registerRender: (req, res) => {
+        Promise.all([
+            db.Nationalitie.findAll({ include: [{ association: "provinces" }] }),
+            db.Province.findAll()
+        ])
+        .then(([nations, provinces]) => {
+            return res.render('register', { nations, provinces });
+        })
+        .catch(err => {
+            console.error("Error fetching data:", err);
+            res.status(500).send("Internal server error");
+        });
     },
 
     listado: (req, res) => {
         const usuarios = leerUsuarios();
         res.render('usuarios', { usuarios });
+    },
+
+    userCreate: (req, res) => {
+        let errors = validationResult(req);
+        let emailPc = req.body.email;
+        let emailCheck = db.User.findOne({where: {email: emailPc}})
+        if (emailCheck != undefined){
+            Promise.all([
+                db.Nationalitie.findAll({ include: [{ association: "provinces" }] }),
+                db.Province.findAll()
+            ])
+            .then(([nations, provinces]) => {
+                return res.render('register', {errors: {email:{msg:'Este email ya ha sido registrado'}}, old:req.body, nations, provinces });
+            })
+        }
+
+        if (errors.isEmpty()){
+            
+            db.User.create({
+                first_name: req.body.firstName,
+                last_name: req.body.lastName,
+                profile_img: "/images/usuario_defecto.png",
+                email: req.body.email,
+                password: bcryptjs.hashSync(req.body.password, 10),
+                phone: req.body.phone,
+                nationalities_id: req.body.nationality,
+                provinces_id: req.body.province,
+                roles_id: 2
+            })
+            .then(function(user){
+                return res.redirect('/')
+            })
+        }else{
+            Promise.all([
+                db.Nationalitie.findAll({ include: [{ association: "provinces" }] }),
+                db.Province.findAll()
+            ])
+            .then(([nations, provinces]) => {
+                return res.render('register', {errors: errors.array(), old:req.body, nations, provinces });
+            })
+        }
+
     },
 
     cargaUsuario: (req, res) => {

@@ -6,5 +6,131 @@
 
 main{
     min-height: 700px;
+    padding:30px;
 }
+
+main > h2{
+    text-align: center;
+    font-size: larger;
+    color: darkblue;
+    margin-bottom: 20px;
+}
+
+.cont_gral{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    gap:10px;
+    max-height: 1400px;
+    overflow-y: scroll;
+}
+
+.cont_user{
+    margin:auto;
+    border: none;
+    border-radius: 10px;
+    background-color: #36173d;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 90px;
+    width: 280px;
+    transition: all 300ms;
+}
+
+.cont_user:hover{
+    transform: scale(103%);
+    background-color: #471e50;
+    cursor: pointer;
+}
+
+.user_img{
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.user_img > img{
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    border-radius: 50%;
+	overflow: hidden;
+}
+
+.secc_user_gral{
+    height: 100%;
+    width:70%;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+}
+
+.user_name{
+    flex:50%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user_name > h3{
+    width: 100%;
+    color:white;
+    font-size: 15px;
+}
+
+.user_nat{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+    flex:25%;
+}
+
+.user_nat > p{
+    width: 100%;
+    color:white;
+    font-size: 12px;
+}
+
+.user_role{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+    flex:25%;
+}
+
+.user_role > p{
+    width: 100%;
+    color:white;
+    font-size: 12px;
+}
+
+@media (min-width: 760px) {
+    main{
+        max-height: 800px;
+
+    }
+
+    .cont_gral{
+        flex-wrap: wrap;
+        max-height: 700px;
+        width: 100%;
+        overflow-x: scroll;
+        overflow-y: hidden;
+    }
+
+    .cont_user{
+        margin:auto;
+        
+    }
+}
+
+
 

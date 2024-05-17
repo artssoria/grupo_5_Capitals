@@ -4,7 +4,7 @@ const path = require('path');
 const fs = require('fs');
 const multer = require('multer');
 const adminController = require('../controllers/adminController');
-const middleValidationForm =require('../middlewares/middleValidationForm')
+const middleValidationForm =require('../middlewares/middleValidationForm');
 
 const storage = multer.diskStorage({
     destination: (req,file,cb) =>{
