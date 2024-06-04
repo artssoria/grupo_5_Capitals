@@ -9,22 +9,38 @@
             </div>
         </div>
         <div class="Botones_nav">
-            <ul>
-                <li class="guiad"><a class="descubri" href="/compra">Descubrí</a>
-                    <ul>
-                        <li><a href="/descubri/valles">Valles</a></li>
-                        <li><a href="/descubri/quebrada">Quebrada</a></li>
-                        <li><a href="/descubri/puna">Puna</a></li>
-                        <li><a href="/descubri/yungas">Yungas</a></li>
-                    </ul>
-                </li>
+            <% if(locals.isLogged){ %>
+                <ul>
+                    <li class="guia"><a class="descubri" href="/producto/listado-productos">Comprá</a>
+                    </li>
+                    <li class="guia"><a href="#Text_comentarios">Comentá</a></li>
+                    <li class="carrito"><a href="/producto/carrito"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                    <li class="carrito"><a href="/users/profile"><i class="fa-solid fa-gear"></i></i></a></li>
+                    <li class="imagen-perfil">
+                        <img src="<%=locals.userLogged.profile_img%>" alt="imagen de perfil del usuario <%=locals.userLogged.first_name%>">
+                        <p><%=locals.userLogged.first_name%></p>
+                    </li>
+                    <li class="boton_register"><a href="/users/exit">Salir</a></li>
+                </ul>
+            <%}else { %>
+                <ul>
+                    <li class="guiad"><a class="descubri" href="/compra">Descubrí</a>
+                        <ul>
+                            <li><a href="/descubri/valles">Valles</a></li>
+                            <li><a href="/descubri/quebrada">Quebrada</a></li>
+                            <li><a href="/descubri/puna">Puna</a></li>
+                            <li><a href="/descubri/yungas">Yungas</a></li>
+                        </ul>
+                    </li>
+    
+                    <li class="guia"><a href="/producto/listado-productos">Viajá</a></li>
+                    <li class="guia"><a href="#Text_comentarios">Comentá</a></li>
+                    <li class="carrito"><a href="/producto/carrito"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                    <li class="boton_login"><a href="/users/login"> Iniciar Sesión</a></li>
+                    <li class="boton_register"><a href="/users/register">Registrate</a></li>
+                </ul>
+            <%} %>
 
-                <li class="guia"><a href="/producto/listado-productos">Viajá</a></li>
-                <li class="guia"><a href="#Text_comentarios">Comentá</a></li>
-                <li class="carrito"><a href="/producto/carrito"><i class="fa-solid fa-cart-shopping"></i></a></li>
-                <li class="boton_login"><a href="/users/login"> Iniciar Sesión</a></li>
-                <li class="boton_register"><a href="/users/register">Registrate</a></li>
-            </ul>
         </div>
     </nav>
     <div class="banner1">

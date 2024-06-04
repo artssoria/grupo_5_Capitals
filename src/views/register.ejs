@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/ca385f949f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="/css/register.css">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/modal.css">
@@ -32,7 +33,7 @@
 
                 <li class="guia"><a href="/producto/listado-productos">Viajá</a></li>
                 <li class="guia"><a href="#Text_comentarios">Comentá</a></li>
-                <li class="carrito"><a href="/producto/carrito"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                <li class="guia"><a href="https://www.freepik.es/vector-gratis/conjunto-pegatinas-distintivos-viaje_15226638.htm#fromView=search&page=1&position=2&uuid=f1c49c7c-9074-42b6-85d8-9ed85a7933f0">Imagen de rawpixel.com en Freepik</a></li>
                 <li class="boton_login"><a href="/users/login"> Iniciar Sesión</a></li>
                 <li class="boton_register"><a href="/users/register">Registrate</a></li>
             </ul>
@@ -40,16 +41,49 @@
     </nav>
 
         <!-- Formulario de registro -->
-        <div class="register-form">
+    <div class="principal">
+      <div class="register-form">
           <div>
               <h1>Registrate y forma parte de TravelXJujuy</h1>
           </div>
           <form action="/users/register" method="post">
               <input type="hidden" id="id" name="id">
-              <input type="text" id="firstName" name="firstName" placeholder="Nombre" required value="<%=locals.old ? old.firstName : '' %>">
-              <input type="text" id="lastName" name="lastName" placeholder="Apellido" required value="<%=locals.old ? old.lastName : '' %>">
-              <input type="email" id="email" name="email" placeholder="Email" required value="<%=locals.old ? old.email : '' %>">
-              <input type="password" id="password" name="password" placeholder="Contraseña" required>
+              <div class="cont-input">
+                <input type="text" id="firstName" name="firstName" placeholder="Nombre" value="<%=locals.old ? old.firstName : '' %>">
+                <% if (locals.errors && errors.firstName) { %>
+                  <p>⚠</p>
+                <%}%>
+              </div>
+              <div class="cont-input">
+                <input type="text" id="lastName" name="lastName" placeholder="Apellido" value="<%=locals.old ? old.lastName : '' %>">
+                <% if (locals.errors && errors.lastName) { %>
+                  <p>⚠</p>
+                <%}%>
+              </div>
+              <div class="cont-input">
+                <input 
+                type="email" 
+                id="email" 
+                name="email" 
+                placeholder="<%=locals.errors && errors.email ? 'Email ⚠⚠⚠⚠⚠' : 'Email' %>" 
+                required 
+                value="<%=locals.old ? old.email : '' %>"
+                class="<%=locals.errors && errors.email ? 'is-invalid' : '' %>"
+                >
+                <% if (locals.errors && errors.email) { %>
+                  <p>⚠</p>
+                <%}%>
+              </div>
+              
+              <div class="cont-input">
+                <input type="password" id="password" name="password" 
+                placeholder="Contraseña" 
+                required class="is-invalid">
+                <% if (locals.errors && errors.password) { %>
+                  <p>⚠</p>
+                <%}%>
+              </div>
+              
               <input type="tel" id="phone" name="phone" placeholder="Telefono" required value="<%=locals.old ? old.phone : '' %>">
               <select name="nationality" id="nationality">
                 <% nations.forEach(nation => {%>
@@ -74,14 +108,15 @@
               <button type="submit">Registrarse</button>
           </form>
           <div class="cont_errores">
-            <%  if(locals.errors) { 
-                    errors.forEach(error => { %>
-                        <p class="errorMensaje"><%= error.msg %> </p>
-            <%      }) 
-                };
-            %>
-        </div>
+            <%  if(locals.errors) { %>
+                <%  for (let error in errors) { %>
+                        <p class="errorMensaje"><%= errors[error].msg %> </p>
+            <%      } %>
+            <%  };  %>
+          </div>
       </div>
+    </div>
+        
       
 
 <!-- Modal -->

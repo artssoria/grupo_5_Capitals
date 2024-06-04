@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/normal.css">
+    <link rel="icon" href="/images/icono.png" type="image/png">
+    <link rel="stylesheet" href="/css/style.css">
+	<script src="https://kit.fontawesome.com/ca385f949f.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="/css/amulya.css">
+    <link rel="stylesheet" href="/css/profileUser.css">
+    <title>TravelXJujuy</title>
+</head>
+<body>
+    <%- include('partials/header') %>
+    <main>
+        <div class="title-profile">
+            <h2>Te damos la bienvenida a tu perfil <%=locals.userLogged.first_name + " " + locals.userLogged.last_name%></h2>
+        </div>
+        <div class="cont-userProfile">
+            <div class="div-img">
+                <img src="<%=locals.userLogged.profile_img%>" alt="Imagen de perfil de <%=locals.userLogged.first_name%>">
+                <p><%=userDb.profile_img%></p>
+            </div>
+            <div class="div-info">
+                <ul>
+                    <li><p>Email: <%=locals.userLogged.email%></p></li>
+                    <li><p>Teléfono: <%=locals.userLogged.phone%></p></li>
+                    <li><p>País: <%=userDb.nationalities.name%> </p></li>
+                    <li><p>Provincia/Estado: <%=userDb.provinces.name%> </p></li>
+                    <li><p>Rol: <%=userDb.roles.name%></p></li>
+                </ul>
+            </div>
+            <div class="div-buttons">
+                <a href=""><button>Modificar</button></a>
+                <a href=""><button>Comentarios</button></a>
+                <a href=""><button>Historial de compras</button></a>
+            </div>
+        </div>
+        <div>
+
+        </div>
+            
+    </main>
+    <%- include('partials/footer') %>
+</body>
+</html>

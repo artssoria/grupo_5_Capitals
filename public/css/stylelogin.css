@@ -13,17 +13,40 @@ body html{
     position: relative;
 }
 
+main{
+    height: 700px;
+    padding-top: 200px;
+    background-image: url('/images/travel-vector.jpg');
+    background-repeat: repeat;
+    background-size: 700px;
+    background-position: center;
+}
+
 
 .login-form {
     width: 350px;
-    margin: 60px auto;
+    margin: auto;
     padding: 30px;
     background-color: #FF4845;
     border-radius: 10px;
     text-align: center;
+    animation: animationInitial 2s forwards;
 }
+
+@keyframes animationInitial {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
 .login-form div h1{
     margin: 10px;
+    color: white;
 }
 .login-form input {
     width: 100%;
@@ -40,4 +63,17 @@ body html{
     color: #36173D;
     font-weight: bold;
     background-color: #FFEC5E;
+    transition: all 350ms;
+}
+
+.login-form button:hover{
+    background-color: beige;
+    cursor: pointer;
+}
+
+.mensaje-error{
+    color:white;
+    font-size: 12px;
+    padding-bottom: 8px;
+
 }
