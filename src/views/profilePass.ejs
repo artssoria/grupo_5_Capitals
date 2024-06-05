@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/normal.css">
+    <link rel="icon" href="/images/icono.png" type="image/png">
+    <link rel="stylesheet" href="/css/style.css">
+	<script src="https://kit.fontawesome.com/ca385f949f.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="/css/amulya.css">
+    <link rel="stylesheet" href="/css/profilePass.css">
+    <title>TravelXJujuy</title>
+</head>
+<body>
+    <%- include('partials/header') %>
+    <main>
+        <div class="form">
+            <h2>Modificar Contraseña</h2>
+            <form action="/users/modifPassword/<%=userDb.id%>" method="post">
+                <div class="first">
+                    <div class="second">
+                        <label for="password1">Escribe tu contraseña</label>
+                    </div>
+                    <div class="third">
+                        <input type="password" name="password1" placeholder="Tu contraseña actual">
+                        <button><i class="fa-solid fa-eye"></i></button>
+                    </div>
+                    <div class="errores">
+                        <%if(locals.errors && errors.password1){ %>
+                            <p><%=errors.password1.msg%></p>
+                        <%}%>
+                    </div>
+                </div>
+                <div class="first">
+                    <div class="second">
+                        <label for="password2">Escribe una nueva contraseña</label>
+                    </div>
+                    <div class="third">
+                        <input type="password" name="password2" placeholder="Tu nueva contraseña">
+                        <button><i class="fa-solid fa-eye"></i></button>
+                    </div>
+                    <div class="errores">
+                        <%if(locals.errors && errors.password2){ %>
+                            <p><%=errors.password2.msg%></p>
+                        <%}%>
+                    </div>
+                </div>
+                <div class="first">
+                    <div class="second">
+                        <label for="password3">Vuelve a escribir tu contraseña</label>
+                    </div>
+                    <div class="third"> 
+                        <input type="password" name="password3" placeholder="Repite la contraseña">
+                        <button><i class="fa-solid fa-eye"></i></button>
+                    </div>
+                    <div class="errores">
+                        <%if(locals.errors && errors.password3){ %>
+                            <p><%=errors.password3.msg%></p>
+                        <%}%>
+                    </div>
+                </div>
+                <div class="first">
+                    <button class="button-send" type="submit">Enviar</button>
+                    <a href="/">Cancelar Operación</a>
+                </div>
+            </form>
+        </div>
+    </main>
+    <%- include('partials/footer') %>
+</body>
+</html>

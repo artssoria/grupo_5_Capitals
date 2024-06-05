@@ -1,0 +1,126 @@
+main{
+    width: 90%;
+    height: 700px;
+    margin: auto;
+    margin-top: 60px;
+}
+
+.form{
+    min-width: 300px;
+    max-width: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.form h2{
+    color: #36173d;
+    font-size: 20px;
+    height: 30px;
+}
+
+form{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+}
+
+.first{
+    width: 100%;
+    color:#36173d;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+}
+
+.second{
+    font-weight: bold;
+    width: 100%;
+    text-align: start;
+}
+
+.third{
+    width: 100%;
+    margin:5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
+    border: none;
+}
+
+.third input {
+    width: 90%;
+    height: 30px;
+    border-radius: 5px 0px 0px 5px;
+    border:solid 1px black;
+    border-right:none;
+    border: none;
+    padding: 5px;
+}
+
+.third button{
+    width: 10%;
+    height: 30px;
+    background-color: white;
+    border: solid 1px black;
+    border-radius: 0px 5px 5px 0px;
+    border-left: none;
+    border:none;
+}
+
+.third button:hover{
+    cursor: pointer;
+}
+
+.third button i{
+    color: #36173d;
+    transition: all 350ms;
+}
+
+.third button:hover i{
+    transform: scale(110%);
+}
+
+.errores{
+    color:#ff4845;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-send, .first > a{
+    background-color:#ff4845;
+    border: none;
+    border-radius: 5px;
+    height: 40px;
+    width: 60%;
+    margin: auto;
+    transition: all 350ms;
+    color:white;
+}
+
+.button-send:hover, .first > a:hover{
+    cursor: pointer;
+    background-color: #ffc55f;
+}
+
+.first > a{
+    text-decoration: none;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+

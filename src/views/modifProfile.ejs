@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/normal.css">
+    <link rel="icon" href="/images/icono.png" type="image/png">
+    <link rel="stylesheet" href="/css/style.css">
+	<script src="https://kit.fontawesome.com/ca385f949f.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="/css/amulya.css">
+    <link rel="stylesheet" href="/css/modifUser.css">
+    <title>TravelXJujuy</title>
+</head>
+<body>
+    <%- include('partials/header') %>
+    <main>
+        <div class="title-cont">
+            <h2>Modificación de datos de usuario</h2>
+        </div>
+        <div class="form">
+            <form action="/users/modifProfile/<%=userDb.id%>" method="post" enctype="multipart/form-data">
+                <%if(!locals.errors){%>
+                    <div class="input-text">
+                        <label for="first_name">Nombre</label>
+                        <input id="first_name" name="first_name" type="text" placeholder="Coloca tu nombre aquí" value="<%=userDb.first_name%>">
+                    </div>
+                    <div class="input-text">
+                        <label for="last_name">Apellido</label>
+                        <input id="last_name" name="last_name" type="text" placeholder="Coloca tu apellido aquí" value="<%=userDb.last_name%>">
+                    </div>
+                    <div class="input-text">
+                        <label for="email">Email</label>
+                        <input id="email" name="email" type="email" placeholder="Coloca tu email aquí" value="<%=userDb.email%>">
+                    </div>
+                    <div class="input-text">
+                        <label for="phone">Teléfono</label>
+                        <input id="phone" name="phone" type="text" placeholder="Coloca tu teléfono aquí" value="<%=userDb.phone%>">
+                    </div>
+                    <div class="selector">
+                        <select name="nationalities_id" id="">
+                            <%for(let i=0; i < nations.length; i++){ %>
+                                <option value="<%=nations[i].id%>" <%= userDb.nationalities.id == nations[i].id ? 'selected' : '' %>><%=nations[i].name%></option>
+                            <%}%>
+                        </select>
+                        <select name="provinces_id" id="">
+                            <%for(let u=0; u < provincies.length; u++){ %>
+                                <option value="<%=provincies[u].id%>" <%= userDb.provinces.id == provincies[u].id ? 'selected' : '' %>><%=provincies[u].name%></option>
+                            <%}%>
+                        </select>
+                    </div>
+                    <div class="div-img">
+                        <label for="profile_img">Imagen: <%=userDb.profile_img%></label>
+                        <input name="profile_img" type="file" id="profile_img">
+                    </div>
+                <%}else{%>
+                    <div class="input-text">
+                        <label for="first_name">Nombre</label>
+                        <input id="first_name" name="first_name" type="text" placeholder="Coloca tu nombre aquí" value="<%=old.first_name%>">
+                    </div>
+                    <%if (locals.errors && errors.first_name){ %>
+                        <div class="errores">
+                            <p><%=errors.first_name.msg%></p>
+                        </div>                      
+                    <%}%>
+
+                    <div class="input-text">
+                        <label for="last_name">Apellido</label>
+                        <input id="last_name" name="last_name" type="text" placeholder="Coloca tu apellido aquí" value="<%=old.last_name%>">
+                    </div>
+                    <%if (locals.errors && errors.last_name){ %>
+                        <div class="errores">
+                            <p><%=errors.last_name.msg%></p>
+                        </div>                      
+                    <%}%>
+                    <div class="input-text">
+                        <label for="email">Email</label>
+                        <input id="email" name="email" type="email" placeholder="Coloca tu email aquí" value="<%=old.email%>">
+                    </div>
+                    <%if (locals.errors && errors.email_name){ %>
+                        <div class="errores">
+                            <p><%=errors.email.msg%></p>
+                        </div>                      
+                    <%}%>
+                    <div class="input-text">
+                        <label for="phone">Teléfono</label>
+                        <input id="phone" name="phone" type="text" placeholder="Coloca tu teléfono aquí" value="<%=old.phone%>">
+                    </div>
+                    <%if (locals.errors && errors.phone){ %>
+                        <div class="errores">
+                            <p><%=errors.phone.msg%></p>
+                        </div>                      
+                    <%}%>
+                    <div class="selector">
+                        <select name="nationalities_id" id="">
+                            <%for(let i=0; i < nations.length; i++){ %>
+                                <option value="<%=nations[i].id%>" <%= locals.old && old.nationality == nations[i].id ? 'selected' : '' %>><%=nations[i].name%></option>
+                            <%}%>
+                        </select>
+                        <select name="provinces_id" id="">
+                            <%for(let u=0; u < provincies.length; u++){ %>
+                                <option value="<%=provincies[u].id%>" <%= locals.old && old.province == provincies[u].id ? 'selected' : '' %>><%=provincies[u].name%></option>
+                            <%}%>
+                        </select>
+                    </div>
+                    <div class="div-img">
+                        <label for="profile_img">Imagen: <%=userDb.profile_img%></label>
+                        <input name="profile_img" type="file" id="profile_img">
+                    </div>  
+                    <%if (locals.errors && errors.profile_img){ %>
+                        <div class="errores">
+                            <p><%=errors.profile_img.msg%></p>
+                        </div>                      
+                    <%}%>  
+                <%}%>
+                <div class="buttons">
+                    <button type="submit">
+                        Modificar
+                    </button>
+                    <button type="reset">
+                        Deshacer
+                    </button>
+                    <a href="/users/modifPassword/<%=userDb.id%>">
+                        Cambiar Contraseña
+                    </a>
+
+                </div>
+            </form>
+            
+        </div>
+    </main>
+    <%- include('partials/footer') %>
+</body>
+</html>

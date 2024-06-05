@@ -48,7 +48,8 @@
                         <p><%=errors.password.msg %></p>
                     </div>
                 <%}%>
-                <input type="hidden" name="tipoUsuario" value="user"> <!-- Campo oculto para el tipo de usuario -->
+                <label for="rememberUser" style="color:white">Recordar sesión</label>
+                <input type="checkbox" name="rememberUser" id="rememberUser">
                 <button type="submit">Iniciar Sesión</button>
             </form>            
         </div>
