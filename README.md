@@ -16,7 +16,13 @@
 
 Luego accede a la dirección en el navegador `http://localhost:3000/`
 
-Puedes accedes a la lista de productos por aqui `http://localhost:3000/producto/listado-productos`
+Debes registrarte y luego iniciar sesion:
+
+Puedes acceder a la lista de productos por aqui `http://localhost:3000/products/list`
+
+Puedes acceder a configuración desde aquí: `http://localhost:3000/users/profile`
+
+Para acciones de admin, iniciar cuenta con [] :
 
 Para carga de producto `http://localhost:3000/admin/carga-producto`
 
@@ -91,4 +97,10 @@ https://paletadecolores.com.ar/paleta/36173d/ff4845/ff745f/ffc55f/ffec5e/
 - .color4 { #ffc55f };
 - .color5 { #ffec5e };
 
+Base de datos:
+El archivo travel_db.sql se encuentra en la carpeta src/data lista para importar en un servidor.
+Del mismo se generó un modelo en sequelize por el que se pueden realizar consultas y operaciones CRUD.
+
+Diagrama de relaciones:
+![Diagrama de relaciones](/public/images/diagrama-er-travel-db.png)
 

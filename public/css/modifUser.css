@@ -15,6 +15,8 @@ main{
 }
 
 .title-cont h2{
+    color:#36173d;
+    font-weight: bold;
     text-align: center;
 }
 
@@ -40,6 +42,7 @@ form{
 }
 
 .input-text label{
+    color:#36173d;
     height: 100%;
     width: 25%;
     font-weight: bold;

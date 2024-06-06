@@ -11,7 +11,7 @@
         <div class="Botones_nav">
             <% if(locals.isLogged){ %>
                 <ul>
-                    <li class="guia"><a class="descubri" href="/producto/listado-productos">Comprá</a>
+                    <li class="guia"><a class="descubri" href="/products/list">Comprá</a>
                     </li>
                     <li class="guia"><a href="#Text_comentarios">Comentá</a></li>
                     <li class="carrito"><a href="/producto/carrito"><i class="fa-solid fa-cart-shopping"></i></a></li>
@@ -43,16 +43,23 @@
 
         </div>
     </nav>
-    <div class="banner1">
-        <h2>¿Dónde inicia tu travesía?</h2>
-    </div>
-    <div class="banner2">
-        <div class="contenedor-titulo">
-            <h1 class="titulo">TravelXJujuy</h1>
+    <%if(locals.isLogged){%>
+        <div class="banner1">
+            <h2>¿Dónde inicia tu travesía?</h2>
         </div>
-        <div class="contenedor-banner">
-            <p class="texto">Muchos lugares por descubrir<br>en una sola provincia</p>
-            <a class="boton" href="/producto/listado-productos">Visita ahora</a>
+    <%}else{%>
+        <div class="banner1">
+            <h2>¿Dónde inicia tu travesía?</h2>
         </div>
-    </div>
+        <div class="banner2">
+            <div class="contenedor-titulo">
+                <h1 class="titulo">TravelXJujuy</h1>
+            </div>
+            <div class="contenedor-banner">
+                <p class="texto">Muchos lugares por descubrir<br>en una sola provincia</p>
+                <a class="boton" href="/producto/listado-productos">Visita ahora</a>
+            </div>
+        </div>
+    <%} %>
+    
 </header>

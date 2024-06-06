@@ -14,25 +14,64 @@
 <body>
     <%- include('partials/header') %>
     <main>
-        <h3></h3>
-        <div class="cont-products">
-            <div class="cont-product">
-                <div class="div-img">
-                    <img src="" alt="">
-                    <p></p>
+        <h3>Lista de productos</h3>
+        <form action="/products/search" method="get">
+            <div class="buscador1">
+                <input type="text" name="search" placeholder="Búsqueda rápida">
+                <button type="submit">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
+            <div class="buscador2">
+                <div class="select">
+                    <select name="lodgings_id" id="lodgings_id">
+                        <option value="0">Alojamiento</option>
+                        <%for(let lod in lodgings){ %>
+                            <option value="<%=lodgings[lod].id%>"><%=lodgings[lod].name%></option>
+                        <%}%>
+                    </select>
                 </div>
-                <div class="div-detail">
-                    <div class="first">
-
-                    </div>
-                    <div class="second">
-
-                    </div>
+                <div class="select">
+                    <select name="services_id" id="services_id">
+                        <option value="0">Tipo de servicio</option>
+                        <%for(let ser in services){ %>
+                            <option value="<%=services[ser].id%>"><%=services[ser].name%></option>
+                        <%}%>
+                    </select>
                 </div>
-                <div class=" div-buttons">
-
+                <div class="select">
+                    <select name="regions_id" id="regions_id">
+                        <option value="0">Región</option>
+                        <%for(let reg in regions){ %>
+                            <option value="<%=regions[reg].id%>"><%=regions[reg].name%></option>
+                        <%}%>
+                    </select>
                 </div>
             </div>
+        </form>
+        <div class="cont-products">
+            <%for(let prod in products){ %>
+                <div class="cont-product">
+                    <div class="div-img">
+                        <img src="<%=products[prod].img%>" alt="Foto de producto <%=products[prod].name%>">
+                        <p><%=products[prod].name%></p>
+                    </div>
+                    <div class="div-detail">
+                        <div class="first">
+                            <p><%=products[prod].lodgings.name%></p>
+                            <p><%=products[prod].services.name%></p>
+                        </div>
+                        <div class="second">
+                            <p><%=products[prod].regions.name%></p>
+                            <p>Arg $<%=products[prod].price%></p>
+                        </div>
+                    </div>
+                    <div class=" div-buttons">
+                        <a href="">Agregar al carrito</a>
+                        <a href="/products/detail/<%=products[prod].id%>">Ver detalle</a>
+                    </div>
+                </div>
+            <%}%>
         </div>
     </main>
     <%- include('partials/footer') %>

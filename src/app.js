@@ -25,6 +25,7 @@ const rutaUsers = require('./routes/users');
 const rutaDescubri = require('./routes/descubri');
 const rutaProducto = require('./routes/producto');
 const rutaAdmin = require('./routes/admin');
+const rutaProduct = require('./routes/products');
 
 // static para establecer la ruta de public como estática
 app.use(express.static('public'));
@@ -42,6 +43,7 @@ app.use('/users', rutaUsers);
 app.use('/descubri', rutaDescubri);
 app.use('/producto', rutaProducto);
 app.use('/admin', rutaAdmin);
+app.use('/products', rutaProduct);
 
 app.use((req,res,next)=>{
     res.status(404).render('not-found')
