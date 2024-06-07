@@ -102,8 +102,9 @@ main form{
 
 .cont-products{
     width: 100%;
+    text-align: center;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     margin: 20px 0px;
     gap: 20px;

@@ -8,17 +8,110 @@
     <link rel="stylesheet" href="/css/style.css">
 	<script src="https://kit.fontawesome.com/ca385f949f.js" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="/css/amulya.css">
-    <link rel="stylesheet" href="/css/listProducts.css">
+    <link rel="stylesheet" href="/css/productDetail.css">
     <title>TravelXJujuy</title>
 </head>
 <body>
     <%- include('partials/header') %>
     <main>
+        <h3>
+            <%=product.name%>
+        </h3>
         <div class="cont-product">
             <div class="div-img">
-                <img src="" alt="">
+                <img src="<%=product.img%>" alt="Imagen de <%=product.name%>">
             </div>
-            
+            <div class="div-detail">
+
+                <div class="description">
+                    <h3>Detalle</h3>
+                    <p><%=product.description%></p>
+                </div>
+                <div class="detalles">
+                    <div class="cat">   
+                        <div class="tit">
+                            <p><%=product.lodgings.name%></p>
+                        </div>
+                        <%if(product.lodgings.name == "Hotel"){%>
+                            <div class="desc">
+                                <p>Alojamiento en hotel de 3 estrellas según disponibilidad</p>
+                            </div>
+                        <%}%>
+                        <%if(product.lodgings.name == "Hostal"){%>
+                            <div class="desc">
+                                <p>Alojamiento en hostal de la más alta calidad</p>
+                            </div>
+                        <%}%>
+                    </div>
+                    <div class="cat">
+                        <div class="tit">
+                            <p><%=product.services.name%></p>
+                        </div>
+                        <%if(product.services.name == "Express"){%>
+                            <div class="desc">
+                                <p>Paquete individual de viaje de 3 días</p>
+                            </div>
+                        <%}%>
+                        <%if(product.services.name == "Familiar"){%>
+                            <div class="desc">
+                                <p>Paquete que incluye hasta 6 personas</p>
+                            </div>
+                        <%}%>
+                        <%if(product.services.name == "Egresados"){%>
+                            <div class="desc">
+                                <p>Paquete extenso que puede incluir hasta 40 personas</p>
+                            </div>
+                        <%}%>
+                    </div>
+                    <div class="cat">
+                        <div class="tit">
+                            <p><%=product.regions.name%></p>
+                        </div>
+                        <%if(product.regions.name == "Puna"){%>
+                            <div class="desc">
+                                <p><em>Altitud: </em>Alta, sobre 3,500 metros sobre el nivel del mar.</p>
+                                <p><em>Clima: </em>Árido y frío, con grandes variaciones de temperatura entre el día y la noche.</p>
+                                <p><em>Paisaje: </em>Desértico, con salares, volcanes y lagunas. Vegetación escasa, principalmente pastizales y cactus.</p>
+                            </div>
+                        <%}%>
+                        <%if(product.regions.name == "Quebrada"){%>
+                            <div class="desc">
+                                <p>Altitud: Media, entre 2,000 y 3,500 metros sobre el nivel del mar.</p>
+                                <p>Clima: Seco y templado, con veranos cálidos e inviernos fríos.</p>
+                                <p>Paisaje: Valles estrechos y profundos con formaciones rocosas coloridas. Conocida por la Quebrada de Humahuaca, patrimonio cultural de la humanidad.</p>
+                            </div>
+                        <%}%>
+                        <%if(product.regions.name == "Valles"){%>
+                            <div class="desc">
+                                <p>Altitud: Baja, entre 500 y 2,000 metros sobre el nivel del mar.</p>
+                                <p>Clima: Templado a cálido, con lluvias en verano.</p>
+                                <p>Paisaje: Valles fértiles y cultivados. Zona agrícola importante, con cultivos de caña de azúcar, tabaco y frutas.</p>
+                            </div>
+                        <%}%>
+                        <%if(product.regions.name == "Yungas"){%>
+                            <div class="desc">
+                                <p><em>Altitud: </em>Variada, desde los 400 hasta los 2,000 metros sobre el nivel del mar.</p>
+                                <p><em>Clima: </em>Húmedo y cálido, con abundantes lluvias.</p>
+                                <p><em>Paisaje: </em>Bosques subtropicales densos. Gran biodiversidad, con flora y fauna exuberante.</p>
+                            </div>
+                        <%}%>
+                    </div>
+                    <div class="div-price">
+                        <div class="background-price">
+                            <p>Arg $ <%=product.price%></p>
+                            <%let dolar_price = product.price/1200%>
+                            <%let roundDolar = dolar_price.toFixed(2)%>
+                            <p class="dollar">USD $ <%=roundDolar%></p> 
+                        </div>                           
+                    </div>
+                    <div class="div-buttons">
+                        <form action="/carts/cart.id" method="post">
+                            <button type="submit">Agregar al carrito</button>
+                        </form>
+                        <a href="/products/list">Volver al listado</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
     <%- include('partials/footer') %>

@@ -97,10 +97,12 @@ https://paletadecolores.com.ar/paleta/36173d/ff4845/ff745f/ffc55f/ffec5e/
 - .color4 { #ffc55f };
 - .color5 { #ffec5e };
 
-Base de datos:
+### Base de datos:
 El archivo travel_db.sql se encuentra en la carpeta src/data lista para importar en un servidor.
 Del mismo se generó un modelo en sequelize por el que se pueden realizar consultas y operaciones CRUD.
 
-Diagrama de relaciones:
+### Diagrama de relaciones:
 ![Diagrama de relaciones](/public/images/diagrama-er-travel-db.png)
+
+
 
