@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-04-2024 a las 10:13:57
+-- Tiempo de generación: 10-06-2024 a las 22:13:18
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -34,6 +34,17 @@ CREATE TABLE `carts` (
   `concreted` tinyint(1) DEFAULT NULL,
   `users_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `carts`
+--
+
+INSERT INTO `carts` (`id`, `total_price`, `amount_elements`, `concreted`, `users_id`) VALUES
+(1, 80000.00, 2, 1, 2),
+(2, 40000.00, 1, 1, 2),
+(3, 70000.00, 1, 1, 2),
+(4, 0.00, 0, 0, 3),
+(5, 0.00, 0, 0, 2);
 
 -- --------------------------------------------------------
 
@@ -116,10 +127,11 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `name`, `description`, `img`, `price`, `lodgings_id`, `services_id`, `regions_id`) VALUES
-(1, 'Viaje de Locura', 'Un viaje de aventura hacia rutas y paisajes impredibles más una buena dosis de fiestas y cultura imperdibles, por las yungas el carnaval ...', '/images/1709362246469.jpg', 40000.00, 1, 3, 4),
-(2, 'Viaje de momentos', 'Un viaje de aventura hacia rutas y paisajes impredibles más una buena dosis de fiestas y cultura imperdibles, por el paseo de ...', '/images/1709362291205.png', 40000.00, 2, 2, 1),
-(3, 'Viaje de pasion', 'Un viaje lleno de pasion por la carretera. Con cruces y pantallas de visualizaciones en ...', '/images/1709362335536.png', 50000.00, 1, 3, 2),
-(4, 'Viaje por los campos', 'Un viaje tradicional que contempla hermosos paisajes a través de...', '/images/1709362694637.png', 60000.00, 2, 1, 4);
+(1, 'Termas de caimancito', 'Un viaje de autoconocimiento y sanación en el que, además, podrás sacar a relucir toda tu pasión, ya sea por aventurero y viajero o por complaciente y conocedor. Sumergete hacia rutas y paisajes imperdibles que permiten desatar toda tu curiosidad de querer adentrarte más y más.\r\nEste paquete de viaje express permite una experiencia única y de valor por los 6 días que incluye, más desayuno y merienda.', '/images/imagen-1718043997220.jpg', 50000.00, 1, 3, 4),
+(2, 'Termas de Reyes ', 'Un viaje de aventura hacia rutas y paisajes impredibles más una buena dosis de fiestas y cultura imperdibles, a través de unlugar mágico en el que podrás disfrutar de las míticas termas del valle de Reyes. Disfruta de 7 días imperdibles de relajación y diversión mientras aprecias las altas montañas que rodean este escenario de grandes hazañas culturales.', '/images/imagen-1718042351355.jpg', 70000.00, 1, 2, 1),
+(3, 'Viaje de descubrimiento', 'Un viaje de seis días a la Quebrada de Jujuy es una experiencia inolvidable llena de descubrimiento y pasión. Día 1: Explora Purmamarca y el majestuoso Cerro de los Siete Colores. Día 2: Visita las Salinas Grandes, un deslumbrante paisaje blanco. Día 3: Descubre la historia y la cultura en Tilcara, con su Pucará y el Jardín Botánico. Día 4: Sumérgete en la belleza natural de Humahuaca y su imponente Monumento a los Héroes de la Independencia. Día 5: Aventúrate a Iruya, un pintoresco pueblo de montaña. Día 6: Disfruta de la artesanía local y la gastronomía andina antes de despedirte de este mágico lugar.', '/images/1709362335536.png', 150000.00, 1, 3, 2),
+(4, 'Viaje por los campos', 'Un viaje tradicional que contempla hermosos paisajes a través de...', '/images/imagen-1718046301572.jpg', 60000.00, 2, 1, 4),
+(7, 'asdasdasd', 'asdasdasd', '/images/defecto.png', 15000.00, 1, 2, 4);
 
 -- --------------------------------------------------------
 
@@ -133,6 +145,15 @@ CREATE TABLE `products_carts` (
   `carts_id` int(11) DEFAULT NULL,
   `products_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `products_carts`
+--
+
+INSERT INTO `products_carts` (`id`, `amount_products`, `carts_id`, `products_id`) VALUES
+(6, 2, 1, 1),
+(18, 1, 2, 1),
+(20, 1, 3, 2);
 
 -- --------------------------------------------------------
 
@@ -278,6 +299,15 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Volcado de datos para la tabla `users`
+--
+
+INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `password`, `phone`, `nationalities_id`, `provinces_id`, `roles_id`, `profile_img`) VALUES
+(1, 'Diego', 'Arjona', 'admin@admin.com', '$2a$10$75LDTeCntfIHrvE5yIQq/uef6CSNlz55M8omzRWQ2UG2s0RVbsDzC', 'asdasdasd', 1, 1, 2, '/images/usuario_defecto.png'),
+(2, 'Diego', 'Arjona', 'admin-1@admin.com', '$2b$10$x2n3SbHz0Rn7dHPmy6Jo/uc3NzjiZIdHsP98cjLLh0RF6LcnuPXh6', '+54388-4867850', 1, 6, 2, '/images/imagen-1717565776772.jpg'),
+(3, 'Diego', 'Arjona', 'admin-2@admin.com', '$2a$10$YYIDGR2RH1e6cjuv1YfQk.YLeJSPGELgi57ZMzUhmjuI0ajsNtzf2', '3884-867850', 1, 6, 1, '/images/usuario_defecto.png');
+
+--
 -- Índices para tablas volcadas
 --
 
@@ -367,7 +397,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `carts`
 --
 ALTER TABLE `carts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `comentaries`
@@ -379,13 +409,13 @@ ALTER TABLE `comentaries`
 -- AUTO_INCREMENT de la tabla `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `products_carts`
 --
 ALTER TABLE `products_carts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT de la tabla `provinces`
@@ -397,7 +427,7 @@ ALTER TABLE `provinces`
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Restricciones para tablas volcadas
