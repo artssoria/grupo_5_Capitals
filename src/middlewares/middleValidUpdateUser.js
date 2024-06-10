@@ -11,7 +11,7 @@ let middleValidUpdateUser = [
     body('phone').notEmpty().withMessage('Debes agregar un teléfono'),
     body('profile_img').custom((value, {req})=>{
         let file = req.file;
-        let acceptedExtensions= ['.jpg', '.png', '.gif'];
+        let acceptedExtensions= ['.jpg', '.jpeg', '.png', '.gif'];
 
         if(file) {
             let fileExtension = path.extname(file.originalname);
