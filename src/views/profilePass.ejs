@@ -18,6 +18,7 @@
         <%- include('partials/header') %>
     <%}%>
     <main>
+        <script src="/js/pass.js"></script>
         <div class="form">
             <h2>Modificar Contraseña</h2>
             <form action="/users/modifPassword/<%=userDb.id%>" method="post">
@@ -26,8 +27,8 @@
                         <label for="password1">Escribe tu contraseña</label>
                     </div>
                     <div class="third">
-                        <input type="password" name="password1" placeholder="Tu contraseña actual">
-                        <button><i class="fa-solid fa-eye"></i></button>
+                        <input id="password1" type="password" name="password1" placeholder="Tu contraseña actual">
+                        <button id="togglePassword1"><i class="fa-solid fa-eye"></i></button>
                     </div>
                     <div class="errores">
                         <%if(locals.errors && errors.password1){ %>
@@ -40,8 +41,8 @@
                         <label for="password2">Escribe una nueva contraseña</label>
                     </div>
                     <div class="third">
-                        <input type="password" name="password2" placeholder="Tu nueva contraseña">
-                        <button><i class="fa-solid fa-eye"></i></button>
+                        <input id="password2"type="password" name="password2" placeholder="Tu nueva contraseña">
+                        <button id="togglePassword2"><i class="fa-solid fa-eye"></i></button>
                     </div>
                     <div class="errores">
                         <%if(locals.errors && errors.password2){ %>
@@ -54,8 +55,8 @@
                         <label for="password3">Vuelve a escribir tu contraseña</label>
                     </div>
                     <div class="third"> 
-                        <input type="password" name="password3" placeholder="Repite la contraseña">
-                        <button><i class="fa-solid fa-eye"></i></button>
+                        <input id="password3" type="password" name="password3" placeholder="Repite la contraseña">
+                        <button id="togglePassword3"><i class="fa-solid fa-eye"></i></button>
                     </div>
                     <div class="errores">
                         <%if(locals.errors && errors.password3){ %>
