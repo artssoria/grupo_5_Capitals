@@ -12,7 +12,12 @@
     <title>TravelXJujuy</title>
 </head>
 <body>
-    <%- include('partials/header') %>
+    <%if(locals.userLogged.roles_id == 1){%>
+        <%- include('partials/headerAdmin') %>
+    <%}else{%>
+        <%- include('partials/header') %>
+    <%}%>
+
     <main>
         <div class="title-profile">
             <h2>Te damos la bienvenida a tu perfil <%=locals.userLogged.first_name + " " + locals.userLogged.last_name%></h2>
@@ -32,9 +37,14 @@
                 </ul>
             </div>
             <div class="div-buttons">
-                <a href="/users/modifProfile/<%=userDb.id%>"><button>Modificar</button></a>
-                <a href=""><button>Comentarios</button></a>
-                <a href="/users/getHistory/<%=userDb.id%>"><button>Historial de compras</button></a>
+                <%if(locals.userLogged.roles_id == 1){%>
+                    <a href="/users/modifProfile/<%=userDb.id%>"><button>Modificar</button></a>
+                <%}else{%>
+                    <a href="/users/modifProfile/<%=userDb.id%>"><button>Modificar</button></a>
+                    <a href=""><button>Comentarios</button></a>
+                    <a href="/users/getHistory/<%=userDb.id%>"><button>Historial de compras</button></a>
+                <%}%>
+
             </div>
         </div>
         <div>

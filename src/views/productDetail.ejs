@@ -105,7 +105,8 @@
                         </div>                           
                     </div>
                     <div class="div-buttons">
-                        <form action="/carts/<%=session.first_name%>/<%=carts.id%>/<%=products[prod].id%>" method="post">
+
+                        <form action="/carts/<%=session.first_name%>/<%=carts.id%>/<%=product.id%>" method="post">
                             <button type="submit">Agregar al carrito</button>
                         </form>
                         <a href="/products/list">Volver al listado</a>

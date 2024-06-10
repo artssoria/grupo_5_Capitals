@@ -35,8 +35,10 @@ main > h2{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    height: 90px;
+    gap: 15px;
+    height: 100px;
     width: 280px;
+    padding: 10px;
     transition: all 300ms;
 }
 

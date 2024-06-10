@@ -5,6 +5,7 @@ const fs = require('fs');
 const multer = require('multer');
 const adminController = require('../controllers/adminController');
 const middleValidationForm =require('../middlewares/middleValidationForm');
+const middleAdmin = require('../middlewares/middleAdmin');
 
 const storage = multer.diskStorage({
     destination: (req,file,cb) =>{
@@ -20,25 +21,20 @@ const upload = multer({storage});
 
 //Panel de Admin
 
-router.get('/panel', adminController.renderPanel);
+router.get('/panel', middleAdmin, adminController.renderPanel);
 
 //Administrar productos
 
-router.get('/carga-producto', adminController.renderFormCreateProduct);
-
+router.get('/carga-producto', middleAdmin, adminController.renderFormCreateProduct);
 router.post('/carga-producto', upload.single('imagen_product'), middleValidationForm, adminController.createProduct);
-
-router.get('/modif-producto', adminController.listProducts);
-
-router.get('/edit/:idProducto', adminController.renderFormUpdateProduct);
-
+router.get('/modif-producto', middleAdmin, adminController.listProducts);
+router.get('/edit/:idProducto', middleAdmin, adminController.renderFormUpdateProduct);
 router.post('/edit/:idProducto', upload.single('imagen_product'), middleValidationForm, adminController.updateProduct);
-
 router.delete('/delete/:idProducto', adminController.destroyProduct);
 
 //Administrar usuarios
 
-router.get('/listUsers', adminController.RenderListUsers);
+router.get('/listUsers', middleAdmin, adminController.RenderListUsers);
 
 
 module.exports = router;

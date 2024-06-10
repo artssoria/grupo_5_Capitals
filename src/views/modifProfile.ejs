@@ -12,7 +12,11 @@
     <title>TravelXJujuy</title>
 </head>
 <body>
-    <%- include('partials/header') %>
+    <%if(locals.userLogged.roles_id == 1){%>
+        <%- include('partials/headerAdmin') %>
+    <%}else{%>
+        <%- include('partials/header') %>
+    <%}%>
     <main>
         <div class="title-cont">
             <h2>Modificación de datos de usuario</h2>
