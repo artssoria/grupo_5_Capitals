@@ -23,9 +23,10 @@ app.use(express.urlencoded({ extended: false }));
 const rutaHome = require('./routes/home');
 const rutaUsers = require('./routes/users');
 const rutaDescubri = require('./routes/descubri');
-const rutaProducto = require('./routes/producto');
+const rutaProducto = require('./routes/producto'); //JSON
 const rutaAdmin = require('./routes/admin');
 const rutaProduct = require('./routes/products');
+const rutaCart = require('./routes/carts');
 
 // static para establecer la ruta de public como estática
 app.use(express.static('public'));
@@ -41,9 +42,9 @@ app.listen(port, function() {
 app.use('/', rutaHome);
 app.use('/users', rutaUsers);
 app.use('/descubri', rutaDescubri);
-app.use('/producto', rutaProducto);
 app.use('/admin', rutaAdmin);
 app.use('/products', rutaProduct);
+app.use('/carts/', rutaCart);
 
 app.use((req,res,next)=>{
     res.status(404).render('not-found')

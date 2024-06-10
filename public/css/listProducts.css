@@ -221,6 +221,10 @@ main form{
 
 .div-buttons{
     width: 100%;
+}
+
+.div-buttons form{
+    width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -230,7 +234,8 @@ main form{
     border-radius: 0px 0px 5px 5px;
 }
 
-.div-buttons a{
+
+.div-buttons form a{
     text-decoration: none;
     width: 130px;
     padding: 8px;
@@ -243,10 +248,39 @@ main form{
     transition: all 350ms;
 }
 
-.div-buttons a:hover{
+.div-buttons form a:hover{
     cursor: pointer;
     background-color: #ffc55f;
 }
+
+.div-buttons form button{
+    text-decoration: none;
+    width: 130px;
+    padding: 8px;
+    background-color: #ff4845;
+    color: white;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    transition: all 350ms;
+}
+
+.div-buttons form button:hover{
+    cursor: pointer;
+    background-color: #ffc55f;
+}
+
+
+
+.no-match{
+    font-size: 28px;
+    margin: 80px auto;
+    text-align: center;
+    color: grey;
+}
+
+
 
 
 

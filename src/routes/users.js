@@ -24,5 +24,6 @@ router.get('/modifProfile/:idUser', middleAuth, userControllers.modifProfileRend
 router.post('/modifProfile/:idUser', upload.single('profile_img'), middleAuth, middleValidUpdateUser, userControllers.updateUser);
 router.get('/modifPassword/:idUser', middleAuth, userControllers.modifPassRender);
 router.post('/modifPassword/:idUser', middleAuth, middlePassModifValidator, userControllers.updatePass);
+router.get('/getHistory/:idUser', middleAuth, userControllers.getHistory);
 
 module.exports = router;

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/normal.css">
+    <link rel="icon" href="/images/icono.png" type="image/png">
+    <link rel="stylesheet" href="/css/style.css">
+	<script src="https://kit.fontawesome.com/ca385f949f.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="/css/amulya.css">
+    <link rel="stylesheet" href="/css/carts.css">
+    <title>TravelXJujuy</title>
+</head>
+<body>
+    <%- include('partials/header') %>
+    <main>
+        <div class="cont-products">
+            <%if(cartProducts.length > 0){%>
+                <%for(let produ in cartProducts ){%>
+                    <div class="cont-product">
+                        <div class="div-img">
+                            <img src="<%=cartProducts[produ].products.img%>" alt="Imagen de <%=cartProducts[produ].products.name %>">
+                        </div>
+                        <div class="div-detail">
+                            <h3><%=cartProducts[produ].products.name%></h3>
+                            <p>Cantidad: <%=cartProducts[produ].amount_products %></p>
+                        </div>
+                        <div class="price">
+                            <% let priceT = cartProducts[produ].products.price * cartProducts[produ].amount_products %>
+                            <% let priceTRounded = priceT.toFixed(2) %>
+                            <p>Arg $ <%=priceTRounded %></p>
+                        </div>
+                        <div class="div-buttons">
+                            <form action="/carts/<%=session.first_name %>/<%=cartProducts[produ].carts_id %>/<%=cartProducts[produ].id %>/delete" method="post">
+                                <button type="submit">
+                                    Quitar Producto
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                <%}%>
+                
+                <div class="div-Total">
+                    <h3>Monto Total: </h3>
+                    <p>Arg $ <%=carts.total_price %></p>
+                </div>
+                <div class="div-buttons-gral">
+                    <form action="/carts/finish/<%=session.first_name%>/<%=carts.id%>/sale/safe" method="post">
+                        <button type="submit">
+                            Finalizar Compra
+                        </button>
+                    </form>
+                    <a href="/products/list">Seguir comprando</a>
+                </div>
+            <%}else {%>
+                <div class="cont-product">
+                    <div class="div-detail">
+                        <h3>Aún no has agregado productos</h3>
+
+                    </div>
+                </div>
+                <div class="div-buttons-gral">
+                    <a href="/products/list">Seguir comprando</a>
+                </div>
+            <%}%>
+        
+        </div>
+    </main>
+    <%- include('partials/footer') %>
+</body>
+</html>    

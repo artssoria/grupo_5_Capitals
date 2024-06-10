@@ -76,16 +76,16 @@
                         <%}%>
                         <%if(product.regions.name == "Quebrada"){%>
                             <div class="desc">
-                                <p>Altitud: Media, entre 2,000 y 3,500 metros sobre el nivel del mar.</p>
-                                <p>Clima: Seco y templado, con veranos cálidos e inviernos fríos.</p>
-                                <p>Paisaje: Valles estrechos y profundos con formaciones rocosas coloridas. Conocida por la Quebrada de Humahuaca, patrimonio cultural de la humanidad.</p>
+                                <p><em>Altitud: </em>Media, entre 2,000 y 3,500 metros sobre el nivel del mar.</p>
+                                <p><em>Clima: </em>Seco y templado, con veranos cálidos e inviernos fríos.</p>
+                                <p><em>Paisaje: </em>Valles estrechos y profundos con formaciones rocosas coloridas. Conocida por la Quebrada de Humahuaca, patrimonio cultural de la humanidad.</p>
                             </div>
                         <%}%>
                         <%if(product.regions.name == "Valles"){%>
                             <div class="desc">
-                                <p>Altitud: Baja, entre 500 y 2,000 metros sobre el nivel del mar.</p>
-                                <p>Clima: Templado a cálido, con lluvias en verano.</p>
-                                <p>Paisaje: Valles fértiles y cultivados. Zona agrícola importante, con cultivos de caña de azúcar, tabaco y frutas.</p>
+                                <p><em>Altitud: </em>Baja, entre 500 y 2,000 metros sobre el nivel del mar.</p>
+                                <p><em>Clima: </em>Templado a cálido, con lluvias en verano.</p>
+                                <p><em>Paisaje: </em>Valles fértiles y cultivados. Zona agrícola importante, con cultivos de caña de azúcar, tabaco y frutas.</p>
                             </div>
                         <%}%>
                         <%if(product.regions.name == "Yungas"){%>
@@ -105,7 +105,7 @@
                         </div>                           
                     </div>
                     <div class="div-buttons">
-                        <form action="/carts/cart.id" method="post">
+                        <form action="/carts/<%=session.first_name%>/<%=carts.id%>/<%=products[prod].id%>" method="post">
                             <button type="submit">Agregar al carrito</button>
                         </form>
                         <a href="/products/list">Volver al listado</a>

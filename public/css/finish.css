@@ -1,0 +1,40 @@
+main{
+    width:90%;
+    margin: auto;
+}
+
+.cont-message{
+    width: 100%;
+    background-color: #36173d;
+    margin: 40px auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:40px;
+}
+
+.cont-message h3{
+    color: white;
+    font-size: 20px;
+}
+
+.cont-message p{
+    color:white;
+    font-size: 16px;
+}
+
+.cont-message a{
+    background-color: #ff4845;
+    padding: 20px;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    transition: all 350ms;
+}
+
+.cont-message a:hover{
+    cursor:pointer;
+    background-color: #ffc55f;
+}

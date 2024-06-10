@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/normal.css">
+    <link rel="icon" href="/images/icono.png" type="image/png">
+    <link rel="stylesheet" href="/css/style.css">
+	<script src="https://kit.fontawesome.com/ca385f949f.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="/css/amulya.css">
+    <link rel="stylesheet" href="/css/history.css">
+    <title>TravelXJujuy</title>
+</head>
+<body>
+    <%- include('partials/header') %>
+    <main>
+        <div class="cont-histories">
+            <%if (history){ %>
+                <%for(let his in history){%>
+                    <div class="cont-history">               
+                        <div class="div-detail">
+                            <h3>Item</h3>
+                            <p>Cantidad de productos: <%=history[his].amount_elements %></p>
+                            <%let price = history[his].total_price %>
+                            
+                            <p>Arg $ <%=price %></p>
+                        </div>
+                    </div>
+                <%}%>
+                <div class="div-buttons">
+                    <a href="/imprimir">Imprimir</a>
+                    <a href="/">Regresar</a>
+                </div>
+                
+            <%}else{%>
+                <div class="cont-history">
+                    <div class="div-detail">
+                        <h3>Aún no tienes compras registradas</h3>
+                    </div>
+                </div>
+            <%}%>
+        </div>
+    </main>
+    <%- include('partials/footer') %>
+</body>
+</html>    

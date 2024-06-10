@@ -166,10 +166,44 @@ const userControllers = {
     profileRender: async (req,res) =>{
         try{
             let userDb = await db.User.findOne({where:{email:req.session.userLogged.email}, include: [{ association: "nationalities" }, { association: "provinces" }, { association: "roles" }]});
-            res.render('profileUser', {
-                user: req.session.userLogged,
-                userDb
-            })
+            let cartsVerify = await db.Cart.findAll({where: {users_id: userDb.id}, include:[{association: "users"}]});
+            if(cartsVerify.length == 0){
+                await db.Cart.create({
+                    concreted: 0,
+                    total_price: 0,
+                    amount_elements: 0,
+                    users_id: userDb.id
+                });
+                let carts = await db.Cart.findOne({where: {users_id: userDb.id}, include:[{association: "users"}]});
+                res.render('profileUser', {
+                    user: req.session.userLogged,
+                    userDb,
+                    carts
+                })
+            }else{
+                let cartsUser = await db.Cart.findOne({where: {users_id: userDb.id, concreted: 0}});
+                if(cartsUser.length == 0){
+                    await db.Cart.create({
+                        concreted: 0,
+                        total_price: 0,
+                        amount_elements: 0,
+                        users_id: userDb.id
+                    });
+                    let carts = await db.Cart.findOne({where: {users_id: userDb.id, concreted:0}, include:[{association: "users"}]});
+                    res.render('profileUser', {
+                        user: req.session.userLogged,
+                        userDb,
+                        carts
+                    })
+                }else{
+                    let carts = await db.Cart.findOne({where: {users_id: userDb.id, concreted:0}, include:[{association: "users"}]})
+                    res.render('profileUser', {
+                        user: req.session.userLogged,
+                        userDb,
+                        carts
+                    })
+                }
+            }
         }catch(error){
             console.error(error);
             return res.status(500).send("Internal Server Error");
@@ -263,6 +297,19 @@ const userControllers = {
             res.send('Error con: '+ err)
         }
         
+    },
+    getHistory: async(req,res) =>{
+        try{
+            let userDb = await db.User.findOne({where:{email:req.session.userLogged.email}});
+            let history = await db.Cart.findAll({where: {users_id:userDb.id, concreted: 1}});
+            if(history){
+                return res.render('history', {history, userDb})
+            }else{
+                return res.render('history', {userDb})
+            }
+        }catch(err){
+            res.send('Error de servidor 16'+err)
+        }
     }
 };
 

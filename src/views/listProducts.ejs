@@ -50,6 +50,9 @@
             </div>
         </form>
         <div class="cont-products">
+            <%if (products.length == 0 ){%>
+                <p class="no-match">No se encontraron resultados con tu búsqueda</p>
+            <%}%>
             <%for(let prod in products){ %>
                 <div class="cont-product">
                     <div class="div-img">
@@ -67,8 +70,13 @@
                         </div>
                     </div>
                     <div class=" div-buttons">
-                        <a href="">Agregar al carrito</a>
-                        <a href="/products/detail/<%=products[prod].id%>">Ver detalle</a>
+                        <form action="/carts/<%=session.first_name%>/<%=carts.id%>/<%=products[prod].id%>" method="post">
+                            <button type="submit">
+                                Agregar al carrito
+                            </button>
+                            <a href="/products/detail/<%=products[prod].id%>">Ver detalle</a>
+                        </form>
+                        
                     </div>
                 </div>
             <%}%>

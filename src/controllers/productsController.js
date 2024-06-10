@@ -12,8 +12,9 @@ const productsController = {
                 db.Lodging.findAll(),
                 db.Service.findAll(),
                 db.Region.findAll()
-            ])
-            res.render('listProducts', {products, lodgings, services, regions})
+            ]);
+            let session = req.session.userLogged;
+            res.render('listProducts', {products, lodgings, services, regions, session})
         }catch(err){
             return res.send('Error de servidor: ' + err)
         }
@@ -52,8 +53,9 @@ const productsController = {
                 db.Lodging.findAll(),
                 db.Service.findAll(),
                 db.Region.findAll()
-            ])
-            res.render('listProducts', {products, lodgings, services, regions})
+            ]);
+            let session = req.session.userLogged;
+            res.render('listProducts', {products, lodgings, services, regions, session})
 
         }catch(err){
             res.send('Error en el servidor: '+ err)
@@ -63,7 +65,8 @@ const productsController = {
         try{
             let value = req.params.idProduct;
             let product = await db.Product.findByPk(value, {include: [{association: "lodgings"}, {association: "services"}, {association: "regions"}]});
-            res.render('productDetail', {product})
+            let session = req.session.userLogged;
+            res.render('productDetail', {product, session})
         }catch(err){
             res.send('Error de servidor: ' + err)
         }
