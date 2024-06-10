@@ -29,10 +29,10 @@ Para carga de producto `http://localhost:3000/admin/carga-producto`
 Visualizar el panel `http://localhost:3000/admin/panel`
 
 ### Tablero de tareas: 
-https://trello.com/b/0pVEvQqK/dh-5-capitals
+[https://trello.com/b/0pVEvQqK/dh-5-capitals](https://trello.com/invite/b/0pVEvQqK/ATTI93ffae5e8bc823fb5841135aafd43279CCE27E89/dh-5-capitals)
 
 ### Retrospectiva: 
-https://trello.com/b/HVjb5WMC/retro-1-2-3
+[https://trello.com/b/HVjb5WMC/retro-1-2-3](https://trello.com/invite/b/HVjb5WMC/ATTIb13b7d4a16fe3b5ed0bd85a043d0b451C90A3F00/retro-1-2-3)
 
 ## TravelXJujuy
 Puedes ver nuestro boceto en https://wireframe.cc/6kdyTv
