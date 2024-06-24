@@ -34,7 +34,7 @@ const adminController = {
                     break;
                 case "Hostal":
                     lod = 2;
-                    break
+                    break;
                 default:
                     lod = "null";
             }
@@ -48,6 +48,7 @@ const adminController = {
                     break
                 case "Express":
                     serv = 3;
+                    break;
                 default:
                     serv = "null";
             }
@@ -61,8 +62,10 @@ const adminController = {
                     break
                 case "Puna":
                     reg = 3;
+                    break;
                 case "Yungas":
-                    reg = 4
+                    reg = 4;
+                    break;
             }
 
             
@@ -190,11 +193,13 @@ const adminController = {
                     break;
                 case "Quebrada":
                     reg = 2;
-                    break
+                    break;
                 case "Puna":
                     reg = 3;
+                    break;
                 case "Yungas":
                     reg = 4
+                    break;
             }
 
             db.Product.update({
